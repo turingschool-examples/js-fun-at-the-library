@@ -8,18 +8,18 @@ var organizeShelf = require("../src/shelves.js").organizeShelf;
 describe("shelves.js", function() {
   var fantasyShelf = [];
 
-  it('addBook should be a function', function() {
+  it.skip('addBook should be a function', function() {
     assert.isFunction(addBook);
   })
 
-  it('addBook should be able to add a book to a shelf', function() {
+  it.skip('addBook should be able to add a book to a shelf', function() {
     fantasyShelf = addBook("Mistborn", fantasyShelf);
 
     assert.equal(fantasyShelf.length, 1);
     assert.equal(fantasyShelf[0], "Mistborn");
   })
 
-  it('addBook should be able to add another book to a shelf', function() {
+  it.skip('addBook should be able to add another book to a shelf', function() {
     fantasyShelf = addBook("Matilda", fantasyShelf);
     fantasyShelf = addBook("Coraline", fantasyShelf);
     fantasyShelf = addBook("Earthsea", fantasyShelf);
@@ -30,23 +30,23 @@ describe("shelves.js", function() {
     assert.equal(fantasyShelf.length, 4);
   })
 
-  it('removeBook should be a function', function() {
+  it.skip('removeBook should be a function', function() {
     assert.isFunction(removeBook);
   })
 
-  it('removeBook should be able to remove a book from the shelf', function() {
+  it.skip('removeBook should be able to remove a book from the shelf', function() {
     fantasyShelf = removeBook("Matilda", fantasyShelf);
 
     assert.equal(fantasyShelf.length, 3);
     assert.notInclude(fantasyShelf, "Matilda");
   })
 
-  it('addManyBooks should be a function', function() {
+  it.skip('addManyBooks should be a function', function() {
     assert.isFunction(addManyBooks);
   })
 
 
-  it('addManyBooks should be able to add lots of books to our shelf', function() {
+  it.skip('addManyBooks should be able to add lots of books to our shelf', function() {
     var fantasyBooks = ["Dracula", "Seraphina", "Neverwhere"];
 
     fantasyShelf = addManyBooks(fantasyBooks, fantasyShelf);
@@ -59,11 +59,11 @@ describe("shelves.js", function() {
     assert.equal(fantasyShelf[5], "Neverwhere");
   })
 
-  it("organizeShelf should be a function", function() {
+  it.skip("organizeShelf should be a function", function() {
     assert.isFunction(organizeShelf);
   })
 
-  it("organizeShelf should shelve books according to their subject", function () {
+  it.skip("organizeShelf should shelve books according to their subject", function () {
     const fantasyShelf = ["Hobbit, The", "Abhorsen, The", "Coraline", "Earthsea"];
     var organizedShelf = organizeShelf(fantasyShelf);
     assert.equal(organizedShelf[0], "Abhorsen, The");

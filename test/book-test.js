@@ -6,7 +6,7 @@ var writeBook = require('../src/book.js').writeBook;
 
 
 describe('book.js', function() {
-  it('should have a function called createTitle', function() {
+  it('createTitle should be a function', function() {
     assert.isFunction(createTitle);
   })
 

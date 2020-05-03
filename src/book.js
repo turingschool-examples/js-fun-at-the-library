@@ -14,17 +14,16 @@ function calculatePageCount(title) {
   return title.length * 20
 }
 
-function writeBook(title, mainCharacter, author) {
+function writeBook(title, mainCharacter) {
   return {
     title,
     mainCharacter,
-    pageCount: calculatePageCount(title),
-    author
+    pageCount: calculatePageCount(title)
   }
 }
 
-function editBook(book, newPageCount) {
-  book.pageCount = newPageCount
+function editBook(book) {
+  book.pageCount = book.pageCount * .75
 }
 
 module.exports = {

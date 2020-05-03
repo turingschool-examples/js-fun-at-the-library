@@ -1,30 +1,30 @@
 var assert = require("chai").assert;
-var addBook = require("../src/catalog.js").addBook;
-var removeBook = require("../src/catalog.js").removeBook;
-var addManyBooks = require("../src/catalog.js").addManyBooks;
-var alphabetizeBooks = require("../src/catalog.js").alphabetizeBooks;
+var addTitle = require("../src/catalog.js").addTitle;
+var removeTitle = require("../src/catalog.js").removeTitle;
+var addManyTitles = require("../src/catalog.js").addManyTitles;
+var alphabetizeTitles = require("../src/catalog.js").alphabetizeTitles;
 
-describe("shelves.js", function() {
+describe("catalog.js", function() {
 
-  it('addBook should be a function', function() {
-    assert.isFunction(addBook);
+  it('addTitle should be a function', function() {
+    assert.isFunction(addTitle);
   })
 
-  it('addBook should be able to add a book to the catalog', function() {
+  it('addTitle should be able to add a book to the catalog', function() {
     var fantasyCatalog = [];
-    
-    addBook("Mistborn", fantasyCatalog);
+
+    addTitle("Mistborn", fantasyCatalog);
 
     assert.equal(fantasyCatalog.length, 1);
     assert.equal(fantasyCatalog[0], "Mistborn");
   })
 
-  it('addBook should be able to add another book to the catalog', function() {
+  it('addTitle should be able to add another book to the catalog', function() {
     var fantasyCatalog = [];
 
-    addBook("Matilda", fantasyCatalog);
-    addBook("Coraline", fantasyCatalog);
-    addBook("Earthsea", fantasyCatalog);
+    addTitle("Matilda", fantasyCatalog);
+    addTitle("Coraline", fantasyCatalog);
+    addTitle("Earthsea", fantasyCatalog);
 
     assert.equal(fantasyCatalog[0], "Matilda");
     assert.equal(fantasyCatalog[1], "Coraline");
@@ -32,31 +32,31 @@ describe("shelves.js", function() {
     assert.equal(fantasyCatalog.length, 3);
   })
 
-  it('removeBook should be a function', function() {
-    assert.isFunction(removeBook);
+  it('removeTitle should be a function', function() {
+    assert.isFunction(removeTitle);
   })
 
-  it('removeBook should be able to remove a book from the catalog', function() {
+  it('removeTitle should be able to remove a book from the catalog', function() {
     var fantasyCatalog = [];  
 
-    addBook("Matilda", fantasyCatalog);
-    addBook("Coraline", fantasyCatalog);
-    removeBook("Matilda", fantasyCatalog);
+    addTitle("Matilda", fantasyCatalog);
+    addTitle("Coraline", fantasyCatalog);
+    removeTitle("Matilda", fantasyCatalog);
 
     assert.equal(fantasyCatalog.length, 1);
     assert.notInclude(fantasyCatalog, "Matilda");
   })
 
-  it('addManyBooks should be a function', function() {
-    assert.isFunction(addManyBooks);
+  it('addManyTitles should be a function', function() {
+    assert.isFunction(addManyTitles);
   })
 
-  it('addManyBooks should be able to add lots of books to the catalog', function() {
+  it('addManyTitles should be able to add lots of books to the catalog', function() {
     var fantasyCatalog = [];    
     var fantasyBooks = ["Dracula", "Seraphina", "Neverwhere"];
 
-    addBook("Matilda", fantasyCatalog);
-    addManyBooks(fantasyBooks, fantasyCatalog);
+    addTitle("Matilda", fantasyCatalog);
+    addManyTitles(fantasyBooks, fantasyCatalog);
 
     assert.equal(fantasyCatalog[0], "Matilda");
     assert.equal(fantasyCatalog[1], "Dracula");
@@ -64,25 +64,25 @@ describe("shelves.js", function() {
     assert.equal(fantasyCatalog[3], "Neverwhere");
   })
 
-  it('addManyBooks should be able to add more books to the catalog', function() {
+  it('addManyTitles should be able to add more books to the catalog', function() {
     var fantasyCatalog = [];    
     var fantasyBooks = ["5th Season", "The Hobbit"];
 
-    addManyBooks(fantasyBooks, fantasyCatalog);
+    addManyTitles(fantasyBooks, fantasyCatalog);
 
     assert.equal(fantasyCatalog[0], "5th Season");
     assert.equal(fantasyCatalog[1], "The Hobbit");
   })
 
-  it("alphabetizeBooks should be a function", function() {
-    assert.isFunction(alphabetizeBooks);
+  it("alphabetizeTitles should be a function", function() {
+    assert.isFunction(alphabetizeTitles);
   })
 
-  it("alphabetizeBooks should categorize books alphabetically", function () {
+  it("alphabetizeTitles should categorize books alphabetically", function () {
     var fantasyCatalog = [];
 
-    addManyBooks(["Dracula", "Seraphina", "Coraline", "Earthsea"], fantasyCatalog);
-    alphabetizeBooks(fantasyCatalog);
+    addManyTitles(["Dracula", "Seraphina", "Coraline", "Earthsea"], fantasyCatalog);
+    alphabetizeTitles(fantasyCatalog);
     
     assert.equal(fantasyCatalog[0], "Coraline");
     assert.equal(fantasyCatalog[1], "Dracula");

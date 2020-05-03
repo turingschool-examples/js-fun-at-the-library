@@ -5,7 +5,6 @@ var calculatePageCount = require('../src/book.js').calculatePageCount;
 var writeBook = require('../src/book.js').writeBook;
 var editBook = require('../src/book.js').editBook;
 
-
 describe('book.js', function() {
   it('createTitle should be a function', function() {
     assert.isFunction(createTitle);
@@ -27,7 +26,7 @@ describe('book.js', function() {
       assert.equal(ghostTitle, "The Teenage Ghoul");
   })
 
-  it('buildMainCharacter should be a function (make sure to add the function you create in book.js to the module.exports)', function() {
+  it('buildMainCharacter should be a function (make sure to uncomment the function you create in book.js in the module.exports)', function() {
     assert.isFunction(buildMainCharacter);
   })
 
@@ -39,7 +38,7 @@ describe('book.js', function() {
     assert.equal(ghoulCharacter.pronouns, "she/her");
   })
 
-  it('calculatePageCount should be a function (make sure to add the function you create in book.js to the module.exports)', function() {
+  it('calculatePageCount should be a function (make sure to uncomment the function you create in book.js in the module.exports)', function() {
     assert.isFunction(calculatePageCount);
   })
 
@@ -64,21 +63,23 @@ describe('book.js', function() {
   it('writeBook should return a book object', function() {
     var ghoulTitle = createTitle("Teenage Ghoul");
     var ghoulCharacter = buildMainCharacter("Vassya", 16, "she/her");
-    var ghoulBook = writeBook(ghoulTitle, ghoulCharacter);
+    var ghoulBook = writeBook(ghoulTitle, ghoulCharacter, "Leta Keane");
 
     assert.equal(ghoulBook.title, ghoulTitle);
     assert.equal(ghoulBook.mainCharacter, ghoulCharacter);
     assert.equal(ghoulBook.pageCount, 340);
+    assert.equal(ghoulBook.author, "Leta Keane");
   })
 
   it('writeBook should return a different book object', function() {
     var dragonTitle = createTitle("The Dragon in the Summer");
     var dragonCharacter = buildMainCharacter("Dana", 25, "they/them");
-    var dragonBook = writeBook(dragonTitle, dragonCharacter);
+    var dragonBook = writeBook(dragonTitle, dragonCharacter, "Scott Ertmer");
 
     assert.equal(dragonBook.title, dragonTitle);
     assert.equal(dragonBook.mainCharacter, dragonCharacter);
     assert.equal(dragonBook.pageCount, 560);
+    assert.equal(dragonBook.author, "Scott Ertmer");
   })
 
   it('editBook should be a function', function() {

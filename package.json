@@ -4,7 +4,7 @@
   "description": "FEM1 project working on logic-heavy javascript problems",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test/*-test.js",
+    "test": "mocha",
     "test:autorun": "nodemon --exec \"mocha\""
   },
   "repository": {

@@ -1,10 +1,10 @@
 var assert = require('chai').assert;
-var greetPatron = require('../src/clerk.js').greetPatron;
-var findBookRequest = require('../src/clerk.js').findBookRequest;
-var checkInBookReturn = require('../src/clerk.js').checkInBookReturn;
-var calculateLateFee = require('../src/clerk.js').calculateLateFee;
+var greetPatron = require('../src/librarian.js').greetPatron;
+var findBookRequest = require('../src/librarian.js').findBookRequest;
+var checkInBookReturn = require('../src/librarian.js').checkInBookReturn;
+var calculateLateFee = require('../src/librarian.js').calculateLateFee;
 
-describe('clerk.js', function() {
+describe('librarian.js', function() {
   it('greetPatron should be a function', function() {
     assert.isFunction(greetPatron);
   })

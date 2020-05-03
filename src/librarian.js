@@ -1,6 +1,6 @@
 //Import from catalog
-var addTitle = require('../src/catalog.js').addTitle;
-var removeTitle = require('../src/catalog.js').removeTitle
+var addTitle = require('./catalog.js').addTitle;
+var removeTitle = require('./catalog.js').removeTitle
 
 function greetPatron(patron, time) {
   return `${time < 12 ? "Good Morning" : "Hello"}, ${patron}!`

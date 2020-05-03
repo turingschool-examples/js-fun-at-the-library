@@ -66,11 +66,11 @@ describe("catalog.js", function() {
 
   it('addManyTitles should be able to add more books to the catalog', function() {
     var fantasyCatalog = [];    
-    var fantasyBooks = ["5th Season", "The Hobbit"];
+    var fantasyBooks = ["Fifth Season", "The Hobbit"];
 
     addManyTitles(fantasyBooks, fantasyCatalog);
 
-    assert.equal(fantasyCatalog[0], "5th Season");
+    assert.equal(fantasyCatalog[0], "Fifth Season");
     assert.equal(fantasyCatalog[1], "The Hobbit");
   })
 

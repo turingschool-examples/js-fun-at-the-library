@@ -23,8 +23,14 @@ function checkInBookReturn(book, catalog) {
   }
 }
 
+function calculateLateFee(daysLate) {
+  var dailyFee = 0.25;
+  return Math.ceil(daysLate * dailyFee)
+}
+
 module.exports = {
   greetPatron: greetPatron,
   findBookRequest: findBookRequest,
-  checkInBookReturn: checkInBookReturn
+  checkInBookReturn: checkInBookReturn,
+  calculateLateFee: calculateLateFee
 }

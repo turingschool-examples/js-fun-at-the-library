@@ -2,6 +2,7 @@ var assert = require('chai').assert;
 var greetPatron = require('../src/clerk.js').greetPatron;
 var findBookRequest = require('../src/clerk.js').findBookRequest;
 var checkInBookReturn = require('../src/clerk.js').checkInBookReturn;
+var calculateLateFee = require('../src/clerk.js').calculateLateFee;
 
 describe('clerk.js', function() {
   it('greetPatron should be a function', function() {
@@ -78,5 +79,23 @@ describe('clerk.js', function() {
 
     assert.include(fantasyCatalog, "Dracula");
     assert.equal(returnConfirmation, "Thank you for returning Dracula");
+  })
+
+  it('calculateLateFee should be a function', function() {
+    assert.isFunction(calculateLateFee);
+  })
+
+  //Too spicy?
+  it('calculateLateFee should charge the customer a fee of 0.25 per day the book is late, rounded up to the closest integer', function() {
+    var daysLate = 3;
+    var lateFee = calculateLateFee(daysLate);
+
+    assert.equal(lateFee, 1);
+  })
+
+  it('calculateLateFee should charge the customer a fee of 0.25 per day the book is late, rounded up to the closest integer', function() {
+    var lateFee = calculateLateFee(9);
+
+    assert.equal(lateFee, 3);
   })
 })

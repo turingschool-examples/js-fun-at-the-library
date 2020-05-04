@@ -6,11 +6,11 @@ var alphabetizeTitles = require("../src/catalog.js").alphabetizeTitles;
 
 describe("catalog.js", function() {
 
-  it('addTitle should be a function', function() {
+  it.skip('addTitle should be a function', function() {
     assert.isFunction(addTitle);
   })
 
-  it('addTitle should be able to add a book to the catalog', function() {
+  it.skip('addTitle should be able to add a book to the catalog', function() {
     var fantasyCatalog = [];
 
     addTitle("Mistborn", fantasyCatalog);
@@ -19,7 +19,7 @@ describe("catalog.js", function() {
     assert.equal(fantasyCatalog[0], "Mistborn");
   })
 
-  it('addTitle should be able to add another book to the catalog', function() {
+  it.skip('addTitle should be able to add another book to the catalog', function() {
     var fantasyCatalog = [];
 
     addTitle("Matilda", fantasyCatalog);
@@ -32,11 +32,11 @@ describe("catalog.js", function() {
     assert.equal(fantasyCatalog.length, 3);
   })
 
-  it('removeTitle should be a function', function() {
+  it.skip('removeTitle should be a function', function() {
     assert.isFunction(removeTitle);
   })
 
-  it('removeTitle should be able to remove a book from the catalog', function() {
+  it.skip('removeTitle should be able to remove a book from the catalog', function() {
     var fantasyCatalog = [];  
 
     addTitle("Matilda", fantasyCatalog);
@@ -47,11 +47,11 @@ describe("catalog.js", function() {
     assert.notInclude(fantasyCatalog, "Matilda");
   })
 
-  it('addManyTitles should be a function', function() {
+  it.skip('addManyTitles should be a function', function() {
     assert.isFunction(addManyTitles);
   })
 
-  it('addManyTitles should be able to add lots of books to the catalog', function() {
+  it.skip('addManyTitles should be able to add lots of books to the catalog', function() {
     var fantasyCatalog = [];    
     var fantasyBooks = ["Dracula", "Seraphina", "Neverwhere"];
 
@@ -64,7 +64,7 @@ describe("catalog.js", function() {
     assert.equal(fantasyCatalog[3], "Neverwhere");
   })
 
-  it('addManyTitles should be able to add more books to the catalog', function() {
+  it.skip('addManyTitles should be able to add more books to the catalog', function() {
     var fantasyCatalog = [];    
     var fantasyBooks = ["Fifth Season", "The Hobbit"];
 
@@ -74,11 +74,11 @@ describe("catalog.js", function() {
     assert.equal(fantasyCatalog[1], "The Hobbit");
   })
 
-  it("alphabetizeTitles should be a function", function() {
+  it.skip("alphabetizeTitles should be a function", function() {
     assert.isFunction(alphabetizeTitles);
   })
 
-  it("alphabetizeTitles should categorize books alphabetically", function () {
+  it.skip("alphabetizeTitles should categorize books alphabetically", function () {
     var fantasyCatalog = [];
 
     addManyTitles(["Dracula", "Seraphina", "Coraline", "Earthsea"], fantasyCatalog);

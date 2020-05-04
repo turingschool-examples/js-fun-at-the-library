@@ -9,11 +9,11 @@ var shelfBook = require("../src/shelves.js").shelfBook;
 var unshelfBook = require("../src/shelves.js").unshelfBook;
 
 describe("shelves.js", function() {
-  it("shelfBook should be a function", function() {
+  it.skip("shelfBook should be a function", function() {
     assert.isFunction(shelfBook);
   })
 
-  it("shelfBook should add books to a shelf", function() {
+  it.skip("shelfBook should add books to a shelf", function() {
     var hyperion = {
       title: "Hyperion",
       mainCharacter: { name: "The Shrike", age: null, pronouns: "they" },
@@ -33,7 +33,7 @@ describe("shelves.js", function() {
     assert.equal(scifiShelf[1], hyperion);
   })
 
-  it('shelfBook should add another book to the shelf', function() {
+  it.skip('shelfBook should add another book to the shelf', function() {
     var hyperion = {
       title: "Hyperion",
       mainCharacter: { name: "The Shrike", age: null, pronouns: "they" },
@@ -59,11 +59,11 @@ describe("shelves.js", function() {
     assert.equal(scifiShelf[2], hyperion);
   })
 
-  it('unshelfBook should be a function', function() {
+  it.skip('unshelfBook should be a function', function() {
     assert.isFunction(unshelfBook);
   })
 
-  it('unshelfBook should remove a book by name', function() {
+  it.skip('unshelfBook should remove a book by name', function() {
     var hyperion = {
       title: "Hyperion",
       mainCharacter: { name: "The Shrike", age: null, pronouns: "they" },
@@ -90,7 +90,7 @@ describe("shelves.js", function() {
     assert.notInclude(scifiShelf, dune);
   })
 
-  it("shelves can only hold a certain amount of books", function() {
+  it.skip("shelves can only hold a certain amount of books", function() {
     var hyperion = {
       title: "Hyperion",
       mainCharacter: { name: "The Shrike", age: null, pronouns: "they" },
@@ -121,7 +121,7 @@ describe("shelves.js", function() {
     assert.notInclude(scifiShelf, caseysBook);
   })
 
-  it('if a shelf is full, a new shelf should be started', function() {
+  it.skip('if a shelf is full, a new shelf should be started', function() {
     var hyperion = {
       title: "Hyperion",
       mainCharacter: { name: "The Shrike", age: null, pronouns: "they" },

@@ -1,36 +1,10 @@
-function createTitle(title) {
-  return "The " + title
-}
-
-function buildMainCharacter(name, age, pronouns) {
-  return {
-    name,
-    age,
-    pronouns
-  }
-}
-
-function calculatePageCount(title) {
-  return title.length * 20
-}
-
-function writeBook(title, mainCharacter, genre) {
-  return {
-    title,
-    mainCharacter,
-    pageCount: calculatePageCount(title),
-    genre
-  }
-}
-
-function editBook(book) {
-  book.pageCount = book.pageCount * .75
+function createTitle() {
 }
 
 module.exports = {
   createTitle: createTitle,
-  buildMainCharacter: buildMainCharacter,
-  calculatePageCount: calculatePageCount,
-  writeBook: writeBook,
-  editBook: editBook
+  // buildMainCharacter: buildMainCharacter,
+  // calculatePageCount: calculatePageCount,
+  // writeBook: writeBook,
+  // editBook: editBook
 }

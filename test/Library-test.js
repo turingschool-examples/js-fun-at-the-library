@@ -2,36 +2,36 @@ var assert = require("chai").assert;
 var Library = require("../src/Library.js");
 
 describe("Library", function() {
-  it("Library should be a function", function() {
+  it.skip("Library should be a function", function() {
     assert.isFunction(Library);
   })
 
-  it("Library should have a name", function() {
+  it.skip("Library should have a name", function() {
     var denverLibrary = new Library("Denver Public Library");
 
-    assert.equal(denverLibrary.name, "Denver Public Library");
+  assert.equal(denverLibrary.name, "Denver Public Library");
   })
 
-  it("Library should be able to have another name", function() {
+  it.skip("Library should be able to have another name", function() {
     var goldenLibrary = new Library("Golden Public Library");
 
     assert.equal(goldenLibrary.name, "Golden Public Library");
   })
 
-  it("Library should have a catalog", function() {
+  it.skip("Library should have a catalog", function() {
     var denverLibrary = new Library("Denver Public Library");
 
     assert.isArray(denverLibrary.catalog);
     assert.equal(denverLibrary.catalog.length, 0);
   })
 
-  it("Library should have shelves", function() {
+  it.skip("Library should have shelves", function() {
     var denverLibrary = new Library("Denver Public Library");
 
     assert.isObject(denverLibrary.shelves);
   })
 
-  it("Library should have several different types of shelves", function() {
+  it.skip("Library should have several different types of shelves", function() {
     var denverLibrary = new Library("Denver Public Library");
 
     assert.isArray(denverLibrary.shelves.fantasy);
@@ -39,7 +39,7 @@ describe("Library", function() {
     assert.isArray(denverLibrary.shelves.nonFiction);
   })
 
-  it("A Library should be able to add books to their catalog", function() {
+  it.skip("A Library should be able to add books to their catalog", function() {
     var denverLibrary = new Library("Denver Public Library");
     var dracula = {
       title: "Dracula",
@@ -53,7 +53,7 @@ describe("Library", function() {
     assert.equal(denverLibrary.catalog[0], "Dracula");
   })
 
-  it("A Library should be able to add books to their shelves", function() {
+  it.skip("A Library should be able to add books to their shelves", function() {
     var bornACrime = {
       title: "Born a Crime",
       mainCharacter: { name: "Trevor Noah", age: 36, pronouns: "he/him" },
@@ -68,7 +68,7 @@ describe("Library", function() {
     assert.equal(denverLibrary.shelves.nonFiction[0], bornACrime);
   })
 
-  it('A Library should be able to check out books to patrons', function() {
+  it.skip('A Library should be able to check out books to patrons', function() {
     var dracula = {
       title: "Dracula",
       mainCharacter: { name: "Count Dracula", age: undefined, pronouns: "he/him" },
@@ -99,7 +99,7 @@ describe("Library", function() {
     assert.equal(requestConfirmation, "Yes, we have Pride and Prejudice");
   })
 
-  it('A Library should unshelf a book to check out a book to a patron', function() {
+  it.skip('A Library should unshelf a book to check out a book to a patron', function() {
     var dracula = {
       title: "Dracula",
       mainCharacter: { name: "Count Dracula", age: undefined, pronouns: "he/him" },

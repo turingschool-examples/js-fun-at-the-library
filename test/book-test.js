@@ -1,4 +1,4 @@
-var assert = require('chai').assert;
+var assert = require("chai").assert;
 var createTitle = require("../src/book.js").createTitle;
 var buildMainCharacter = require("../src/book.js").buildMainCharacter;
 var calculatePageCount = require("../src/book.js").calculatePageCount;
@@ -63,7 +63,7 @@ describe("book.js", function() {
   it("writeBook should return a book object", function() {
     var ghoulTitle = createTitle("Teenage Ghoul");
     var ghoulCharacter = buildMainCharacter("Vassya", 16, "she/her");
-    var ghoulBook = writeBook(ghoulTitle, ghoulCharacter);
+    var ghoulBook = writeBook(ghoulTitle, ghoulCharacter, "fantasy");
 
     assert.equal(ghoulBook.title, ghoulTitle);
     assert.equal(ghoulBook.mainCharacter, ghoulCharacter);
@@ -73,7 +73,7 @@ describe("book.js", function() {
   it("writeBook should return a different book object", function() {
     var dragonTitle = createTitle("The Dragon in the Summer");
     var dragonCharacter = buildMainCharacter("Dana", 25, "they/them");
-    var dragonBook = writeBook(dragonTitle, dragonCharacter);
+    var dragonBook = writeBook(dragonTitle, dragonCharacter, "fantasy");
 
     assert.equal(dragonBook.title, dragonTitle);
     assert.equal(dragonBook.mainCharacter, dragonCharacter);
@@ -87,7 +87,7 @@ describe("book.js", function() {
   it("editBook decrease the book's page count to be three quarters of what it originally was", function() {
     var ghoulTitle = createTitle("Teenage Ghoul");
     var ghoulCharacter = buildMainCharacter("Vassya", 16, "she/her");
-    var ghoulBook = writeBook(ghoulTitle, ghoulCharacter);
+    var ghoulBook = writeBook(ghoulTitle, ghoulCharacter, "mystery");
 
     assert.equal(ghoulBook.pageCount, 340);
     

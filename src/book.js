@@ -14,11 +14,12 @@ function calculatePageCount(title) {
   return title.length * 20
 }
 
-function writeBook(title, mainCharacter) {
+function writeBook(title, mainCharacter, genre) {
   return {
     title,
     mainCharacter,
-    pageCount: calculatePageCount(title)
+    pageCount: calculatePageCount(title),
+    genre
   }
 }
 

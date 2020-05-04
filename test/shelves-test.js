@@ -1,20 +1,19 @@
-var assert = require('chai').assert;
+var assert = require("chai").assert;
 
 // book.js imports
 var createTitle = require("../src/book.js").createTitle;
 var buildMainCharacter = require("../src/book.js").buildMainCharacter;
 var writeBook = require("../src/book.js").writeBook;
 
-var addBook = require("../src/shelves.js").addBook;
-var removeBook = require("../src/shelves.js").removeBook;
-var alphabetizeBooksByAuthor = require("../src/shelves.js").alphabetizeBooksByAuthor;
+var shelfBook = require("../src/shelves.js").shelfBook;
+var unshelfBook = require("../src/shelves.js").unshelfBook;
 
 describe("shelves.js", function() {
-  it("addBook should be a function", function() {
-    assert.isFunction(addBook);
+  it("shelfBook should be a function", function() {
+    assert.isFunction(shelfBook);
   })
 
-  it("addBook should add books to a shelf", function() {
+  it("shelfBook should add books to a shelf", function() {
     var hyperion = {
       title: "Hyperion",
       mainCharacter: { name: "The Shrike", age: null, pronouns: "they" },
@@ -27,14 +26,14 @@ describe("shelves.js", function() {
     };
     var scifiShelf = [];
 
-    addBook(hyperion, scifiShelf);
-    addBook(dune, scifiShelf);
+    shelfBook(hyperion, scifiShelf);
+    shelfBook(dune, scifiShelf);
 
     assert.equal(scifiShelf[0], dune);
     assert.equal(scifiShelf[1], hyperion);
   })
 
-  it('addBook should add another book to the shelf', function() {
+  it('shelfBook should add another book to the shelf', function() {
     var hyperion = {
       title: "Hyperion",
       mainCharacter: { name: "The Shrike", age: null, pronouns: "they" },
@@ -52,19 +51,19 @@ describe("shelves.js", function() {
     };
     var scifiShelf = [hyperion];
 
-    addBook(endersgame, scifiShelf);
-    addBook(dune, scifiShelf);
+    shelfBook(endersgame, scifiShelf);
+    shelfBook(dune, scifiShelf);
 
     assert.equal(scifiShelf[0], dune);
     assert.equal(scifiShelf[1], endersgame);
     assert.equal(scifiShelf[2], hyperion);
   })
 
-  it('removeBook should be a function', function() {
-    assert.isFunction(removeBook);
+  it('unshelfBook should be a function', function() {
+    assert.isFunction(unshelfBook);
   })
 
-  it('removeBook should remove a book by name', function() {
+  it('unshelfBook should remove a book by name', function() {
     var hyperion = {
       title: "Hyperion",
       mainCharacter: { name: "The Shrike", age: null, pronouns: "they" },
@@ -85,7 +84,7 @@ describe("shelves.js", function() {
     assert.equal(scifiShelf.length, 3);
     assert.include(scifiShelf, dune);
 
-    removeBook("Dune", scifiShelf);
+    unshelfBook("Dune", scifiShelf);
     
     assert.equal(scifiShelf.length, 2);
     assert.notInclude(scifiShelf, dune);
@@ -109,14 +108,14 @@ describe("shelves.js", function() {
     };
     var caseysTitle = createTitle("Robot Kitty");
     var caseysCharacter = buildMainCharacter("Coda", 15, "he/him");
-    var caseysBook = writeBook(caseysTitle, caseysCharacter);
+    var caseysBook = writeBook(caseysTitle, caseysCharacter, "scifi");
     var scifiShelf = [hyperion, dune];
     
-    addBook(endersgame, scifiShelf);
+    shelfBook(endersgame, scifiShelf);
 
     assert.equal(scifiShelf.length, 3);
 
-    addBook(caseysBook, scifiShelf);
+    shelfBook(caseysBook, scifiShelf);
 
     assert.equal(scifiShelf.length, 3);
     assert.notInclude(scifiShelf, caseysBook);
@@ -140,14 +139,14 @@ describe("shelves.js", function() {
     };
     var caseysTitle = createTitle("Robot Kitty");
     var caseysCharacter = buildMainCharacter("Coda", 15, "he/him");
-    var caseysBook = writeBook(caseysTitle, caseysCharacter);
+    var caseysBook = writeBook(caseysTitle, caseysCharacter, "scifi");
     var scifiShelf = [hyperion, dune];
     
-    addBook(endersgame, scifiShelf);
+    shelfBook(endersgame, scifiShelf);
 
     assert.equal(scifiShelf.length, 3);
 
-    var secondScifiShelf = addBook(caseysBook, scifiShelf);
+    var secondScifiShelf = shelfBook(caseysBook, scifiShelf);
 
     assert.equal(secondScifiShelf[0], caseysBook);
   })

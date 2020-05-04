@@ -1,4 +1,4 @@
-function addBook(book, shelf) {
+function shelfBook(book, shelf) {
   if (shelf.length < 3) {
     shelf.unshift(book)
   }
@@ -7,11 +7,11 @@ function addBook(book, shelf) {
   }
 }
 
-function removeBook(name, shelf) {
+function unshelfBook(name, shelf) {
   shelf.splice(shelf.findIndex(book => book.title === name), 1);
 }
 
 module.exports = {
-  addBook: addBook,
-  removeBook: removeBook
+  shelfBook: shelfBook,
+  unshelfBook: unshelfBook
 }

@@ -46,7 +46,7 @@ problem.
     solutions. Is this the best approach to solving the problem? Is there a
     different way you could make the tests pass?  
 
-### 2: Complete the catalog tests
+### 2: Complete the shelf tests
   - Unskip the first test in `test/catalog-test.js`, and get to work passing the tests
   - Run `npm test test/catalog-test.js`  
   - Before moving on to the next iteration, take time to refactor your

@@ -1,101 +1,102 @@
 var assert = require("chai").assert;
-var greetPatron = require('../src/librarian.js').greetPatron;
-var findBookRequest = require('../src/librarian.js').findBookRequest;
-var checkInBookReturn = require('../src/librarian.js').checkInBookReturn;
-var calculateLateFee = require('../src/librarian.js').calculateLateFee;
+var Librarian = require('../src/librarian.js');
+var createLibrary = require('../src/library.js').createLibrary;
+var addBook = require('../src/library.js').addBook;
+var checkoutBook = require('../src/library.js').checkoutBook;
+var searchShelf = require('../src/shelf.js').searchShelf;
 
-describe('librarian.js', function() {
-  it.skip('greetPatron should be a function', function() {
-    assert.isFunction(greetPatron);
-  })
+describe('Librarian (class)', function() {
+  it.skip('should instantiate a librarian object', function() {
+    var casey = new Librarian("Casey");
 
-  it.skip('greetPatron should greet a patron by name', function() {
-    assert.equal(greetPatron("Will"), "Hello, Will!");
-    assert.equal(greetPatron("Tilly"), "Hello, Tilly!");
-  })
+    assert.instanceOf(casey, Librarian);
+  });
 
-  it.skip('greetPatron should greet a patron differently if it is morning', function() {
-    assert.equal(greetPatron("Scott"), "Hello, Scott!");
-    assert.equal(greetPatron("Leta", 11), "Good Morning, Leta!");
-    assert.equal(greetPatron("Casey", 12), "Hello, Casey!");
-  })
+  it.skip('should have a name', function() {
+    var librarian = new Librarian("Casey");
 
-  it.skip('findBookRequest should be a function', function() {
-    assert.isFunction(findBookRequest);
-  })
+    assert.equal(librarian.name, "Casey");
+  });
 
-  it.skip('findBookRequest should confirm if the requested book is in the catalog', function() {
-    var fantasyCatalog = ["Fifth Season", "Dracula", "Seraphina", "Neverwhere", "Coraline"];
+  it.skip('should be able to have a different name', function() {
+    var librarian = new Librarian("Scott");
 
-    var bookConfirmation = findBookRequest("Fifth Season", fantasyCatalog);
+    assert.equal(librarian.name, "Scott");
+  });
 
-    assert.equal(bookConfirmation, "Yes, we have Fifth Season");
-  })
+  it.skip('should work at a library', function() {
+    var library = createLibrary("Denver Public Library");
+    var librarian = new Librarian("Scott", library);
 
-  it.skip('findBookRequest should acknowledge if the requested book is not in the catalog', function() {
-    var fantasyCatalog = ["Fifth Season", "Dracula", "Seraphina", "Neverwhere", "Coraline"];
+    assert.equal(librarian.name, "Scott");
+    assert.deepEqual(librarian.library, library);
+  });
 
-    var bookConfirmation = findBookRequest("Matilda", fantasyCatalog);
+  it.skip('should be able to work at a different library', function() {
+    var library = createLibrary("Aurora Public Library");
+    var librarian = new Librarian("Casey", library);
 
-    assert.equal(bookConfirmation, "Sorry, we do not have Matilda");
-  })
+    assert.deepEqual(librarian.library, library);
+  });
 
-  it.skip('findBookRequest should remove the title from the catalog if found', function() {
-    var fantasyCatalog = ["Fifth Season", "Dracula", "Seraphina", "Neverwhere", "Coraline"];
+  it.skip('should be able to greet a library patron by name', function() {
+    var scott = new Librarian("Scott");
 
-    var bookConfirmation = findBookRequest("Fifth Season", fantasyCatalog);
+    assert.equal(scott.greetPatron("Will"), "Hello, Will!");
+    assert.equal(scott.greetPatron("Tilly"), "Hello, Tilly!");
+  });
 
-    assert.equal(bookConfirmation, "Yes, we have Fifth Season");
-    assert.notInclude(fantasyCatalog, "Fifth Season");
-  })
-  
-  it.skip('checkInBookReturn should be a function', function() {
-    assert.isFunction(checkInBookReturn);
-  })
+  it.skip('should greet a library patron differently if it is morning', function() {
+    var leta = new Librarian("Leta");
 
-  it.skip('checkInBookReturn should add a title to the catalog upon a book return', function() {
-    var fantasyCatalog = ["Fifth Season", "Seraphina", "Neverwhere", "Coraline"];
+    assert.equal(leta.greetPatron("Scott"), "Hello, Scott!");
+    assert.equal(leta.greetPatron("Amy", true), "Good morning, Amy!");
+    assert.equal(leta.greetPatron("Casey", false), "Hello, Casey!");
+  });
 
-    assert.notInclude(fantasyCatalog, "Dracula");
+  it.skip('should confirm if a requested book is on the shelves', function() {
+    var auroraLibrary = createLibrary("Aurora Public Library");
+    var librarian = new Librarian("Casey", auroraLibrary);
+    var book = {title: 'The Fifth Season', genre: 'fantasy'}
 
-    checkInBookReturn("Dracula", fantasyCatalog);
+    addBook(librarian.library, book);
 
-    assert.include(fantasyCatalog, "Dracula");
-  })
+    var bookConfirmation = librarian.findBook("The Fifth Season");
 
-  it.skip('checkInBookReturn should not add the return if the book is already in the catalog', function() {
-    var fantasyCatalog = ["Fifth Season", "Seraphina", "Neverwhere", "Coraline"];
+    assert.equal(bookConfirmation, "Yes, we have The Fifth Season");
+  });
 
-    var returnConfirmation = checkInBookReturn("Seraphina", fantasyCatalog);
+  it.skip('should say if requested book is not found', function() {
+    var library = createLibrary("Aurora Public Library");
+    var librarian = new Librarian("Casey", library);
+    var book = { title: 'The Fifth Season', genre: 'fantasy' }
 
-    assert.equal(fantasyCatalog.length, 4);
-    assert.equal(returnConfirmation, undefined); //Too spicy?
-  })
+    librarian.library.addBook(book);
 
-  it.skip('checkInBookReturn should thank the patron for their return', function() {
-    var fantasyCatalog = ["Fifth Season", "Seraphina", "Neverwhere", "Coraline"];
+    var bookConfirmation = librarian.findBook("Five Brief Lessons in Physics");
 
-    var returnConfirmation = checkInBookReturn("Dracula", fantasyCatalog);
+    assert.equal(bookConfirmation, "Sorry, we do not have Five Brief Lessons in Physics");
+  });
 
-    assert.include(fantasyCatalog, "Dracula");
-    assert.equal(returnConfirmation, "Thank you for returning Dracula");
-  })
+  it.skip('should checkout the book if found', function() {
+    var library = createLibrary("Aurora Public Library");
+    var librarian = new Librarian("Casey", library);
+    var book = { title: 'The Fifth Season', genre: 'fantasy' }
 
-  it.skip('calculateLateFee should be a function', function() {
-    assert.isFunction(calculateLateFee);
-  })
+    addBook(librarian.library, book);
 
-  //Too spicy?
-  it.skip('calculateLateFee should charge the customer a fee of 0.25 per day the book is late, rounded up to the closest integer', function() {
-    var daysLate = 3;
-    var lateFee = calculateLateFee(daysLate);
+    var bookConfirmation = librarian.findBook("The Fifth Season");
 
-    assert.equal(lateFee, 1);
-  })
+    assert.deepEqual(librarian.library.shelves.fantasy, []);
+  });
 
-  it.skip('calculateLateFee should charge the customer a fee of 0.25 per day the book is late, rounded up to the closest integer', function() {
-    var lateFee = calculateLateFee(9);
+  it.skip('calculateLateFee should charge the customer a fee of 0.25 per day the book is late, rounded up to the closest whole number (integer)', function() {
+    var library = createLibrary("Aurora Public Library");
+    var librarian = new Librarian("Casey", library);
+    var threeDaysLate = librarian.calculateLateFee(3);
+    var sevenDaysLate = librarian.calculateLateFee(9);
 
-    assert.equal(lateFee, 3);
-  })
-})
+    assert.equal(threeDaysLate, 1);
+    assert.equal(sevenDaysLate, 3);
+  });
+});

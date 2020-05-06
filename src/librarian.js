@@ -1,10 +1,8 @@
-//Import from catalog
-// var addTitle = require('./catalog.js').addTitle;
-// var removeTitle = require('./catalog.js').removeTitle;
+class Librarian {
+  constructor() {
 
-module.exports = {
-  // greetPatron: greetPatron,
-  // findBookRequest: findBookRequest,
-  // checkInBookReturn: checkInBookReturn,
-  // calculateLateFee: calculateLateFee
+  }
+  
 }
+
+module.exports = Librarian;

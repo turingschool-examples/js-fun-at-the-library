@@ -5,7 +5,7 @@ function createTitle() {
 module.exports = {
   createTitle: createTitle,
   // buildMainCharacter: buildMainCharacter,
-  // listReviews: listReviews,
+  // saveReview: saveReview,
   // calculatePageCount: calculatePageCount,
   // writeBook: writeBook,
   // editBook: editBook

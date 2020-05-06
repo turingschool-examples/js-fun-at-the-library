@@ -1,5 +1,5 @@
 var assert = require("chai").assert;
-var Librarian = require('../src/librarian.js');
+var Librarian = require('../src/Librarian.js');
 var createLibrary = require('../src/library.js').createLibrary;
 var addBook = require('../src/library.js').addBook;
 var checkoutBook = require('../src/library.js').checkoutBook;

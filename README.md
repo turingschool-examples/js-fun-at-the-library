@@ -47,8 +47,21 @@ problem.
     different way you could make the tests pass?  
 
 ### 2: Complete the shelf tests
-  - Unskip the first test in `test/catalog-test.js`, and get to work passing the tests
-  - Run `npm test test/catalog-test.js`  
+  - Unskip the first test in `test/shelf-test.js`, and get to work passing the tests
+  - Run `npm test test/shelf-test.js`  
   - Before moving on to the next iteration, take time to refactor your
     solutions. Is this the best approach to solving the problem? Is there a
     different way you could make the tests pass?  
+
+### 3: Complete the library tests
+  - Unskip the first test in `test/library-test.js`, and get to work passing the tests
+  - Run `npm test test/library-test.js`  
+  - Before moving on to the next iteration, take time to refactor your
+    solutions. Is this the best approach to solving the problem? Is there a
+    different way you could make the tests pass?  
+
+### 4: Complete the Librarian tests
+  - Unskip the first test in `test/Librarian-test.js`, and get to work passing the tests
+  - Run `npm test test/Librarian-test.js`  
+  - Take time to refactor your solutions. Is this the best approach to solving the problem? 
+    Is there a different way you could make the tests pass?  

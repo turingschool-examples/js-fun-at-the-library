@@ -6,3 +6,8 @@ class Librarian {
 }
 
 module.exports = Librarian;
+
+
+// // #4
+
+// // npm test test/Librarian-test.js

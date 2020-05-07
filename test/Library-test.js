@@ -1,6 +1,8 @@
 var assert = require("chai").assert;
 var createLibrary = require("../src/library.js").createLibrary;
 var checkoutBook = require("../src/library.js").checkoutBook;
+var addBook = require("../src/Library.js").addBook;
+// added <var addBook = require("../src/Library.js").addBook;>
 
 describe("library.js", function() {
   describe("createLibrary", function() {

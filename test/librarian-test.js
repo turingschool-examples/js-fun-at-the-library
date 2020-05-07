@@ -2,8 +2,6 @@ var assert = require("chai").assert;
 var Librarian = require('../src/Librarian.js');
 var createLibrary = require('../src/library.js').createLibrary;
 var addBook = require('../src/library.js').addBook;
-var checkoutBook = require('../src/library.js').checkoutBook;
-var searchShelf = require('../src/shelf.js').searchShelf;
 
 describe('Librarian (class)', function() {
   it.skip('should instantiate a librarian object', function() {

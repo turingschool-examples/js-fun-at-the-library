@@ -32,7 +32,7 @@ describe("shelf.js", function() {g
       assert.equal(sciFiShelf[1], hyperion);
     });
   
-    it.skip('should add another book to the shelf', function() {
+    it.skip("should add another book to the shelf", function() {
       var hyperion = {
         title: "Hyperion",
         mainCharacter: { name: "The Shrike", age: null, pronouns: "they" },
@@ -101,11 +101,11 @@ describe("shelf.js", function() {g
   });
 
   describe("unshelfBook", function() {
-    it.skip('should be a function', function() {
+    it.skip("should be a function", function() {
       assert.isFunction(unshelfBook);
     });
   
-    it.skip('should remove a book by name', function() {
+    it.skip("should remove a book by name", function() {
       var hyperion = {
         title: "Hyperion",
         mainCharacter: { name: "The Shrike", age: null, pronouns: "they" },

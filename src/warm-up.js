@@ -1,5 +1,5 @@
 // Read the instructions for each of the warm up exercises carefully. This may
-// seem repititious or pedandtic at first, however it's very important that you
+// seem repetitious or pedantic at first, however it's very important that you
 // become comfortable with these fundamental concepts. Do not move on to
 // iteration 1 until you are confident that you've completed all of iteration 0.
 
@@ -15,7 +15,7 @@
 
 
 
-// Reassign (not initialize) your "page" variable from above. An editor came around and
+// Reassign (not initialize) your "pages" variable from above. An editor came around and
 // condensed the book, use a built in math operator to make the page count a quarter
 // of what it currently is 
 
@@ -37,7 +37,7 @@
 
 
 // Create a new variable named "isShortStory", and use a comparison operator to
-// assign a boolean value to this variable. If "pageCount" is less than 25, the
+// assign a boolean value to this variable. If "pages" is less than 25, the
 // variable should be true, otherwise it should be false. You MUST use a
 // comparison operator.
 
@@ -46,7 +46,7 @@
 //------------------------- Conditionals -------------------------//
 
 
-// Express the following in code: If the variable title is less than 1000 log
+// Express the following in code: If the variable "pages" is less than 1000 log
 // the statement 'I could read that in a day!', otherwise, log the statement 
 // 'Ok, maybe I could read that in a day and a half'
 
@@ -66,7 +66,6 @@
 // book titles, represented by their names as Strings.
 
 
-
 // Write the code to access the 3rd element of the Array, using bracket
 // notation.
 
@@ -75,7 +74,7 @@
 // different numbers below two hundred.
 
 
-// Write the code to access the number cllosest to two hundred, using bracket notation.
+// Write the code to access the 5th element of the array, using bracket notation.
 
 
 //------------------------- Objects -------------------------//

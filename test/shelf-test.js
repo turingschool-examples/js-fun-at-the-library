@@ -4,7 +4,7 @@ var unshelfBook = require("../src/shelf.js").unshelfBook;
 var listTitles = require("../src/shelf.js").listTitles;
 var searchShelf = require("../src/shelf.js").searchShelf;
 
-describe("shelf.js", function() {g
+describe("shelf.js", function() {
   describe("shelfBook", function() {
     it.skip("should be a function", function() {
       assert.isFunction(shelfBook);

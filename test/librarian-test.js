@@ -69,7 +69,7 @@ describe('Librarian (class)', function() {
     var librarian = new Librarian("Casey", library);
     var book = { title: 'The Fifth Season', genre: 'fantasy' }
 
-    librarian.library.addBook(book);
+    addBook(librarian.library, book);
 
     var bookConfirmation = librarian.findBook("Five Brief Lessons in Physics");
 

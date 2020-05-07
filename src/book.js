@@ -3,7 +3,7 @@ function createTitle(bookTitle) {
 }
 
 function buildMainCharacter(name, age, pronouns) {
-  return {name, age, pronouns};
+  return {name, age, pronouns}
 }
 
 function saveReview(review, reviews) {
@@ -18,13 +18,14 @@ function calculatePageCount(bookTitle) {
 }
 
 function writeBook(title, mainCharacter, genre) {
-  var book = {title, mainCharacter, genre};
+  var book = {title, mainCharacter, genre}
   book.pageCount = calculatePageCount(title);
-  return book;
+  return book
 }
 
 function editBook(book) {
-  book.pageCount = (book.pageCount * .75);
+  book.pageCount = book.pageCount * .75;
+  return book.pageCount
 }
 
 module.exports = {

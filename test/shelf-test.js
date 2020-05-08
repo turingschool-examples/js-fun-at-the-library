@@ -6,23 +6,25 @@ var searchShelf = require("../src/shelf.js").searchShelf;
 
 describe("shelf.js", function() {
   describe("shelfBook", function() {
-    it.skip("should be a function", function() {
+    it("should be a function", function() {
       assert.isFunction(shelfBook);
     });
   
-    it.skip("should add books to a specific shelf", function() {
+    it("should add books to a specific shelf", function() {
       var hyperion = {
         title: "Hyperion",
         mainCharacter: { name: "The Shrike", age: null, pronouns: "they" },
         pageCount: 482,
         genre: "scifi"
       };
+
       var dune = {
         title: "Dune",
         mainCharacter: { name: "Paul", age: 15, pronouns: "he/him" },
         pageCount: 421,
         genre: "scifi"
       };
+
       var scifiShelf = [];
   
       shelfBook(hyperion, scifiShelf);
@@ -32,7 +34,7 @@ describe("shelf.js", function() {
       assert.equal(scifiShelf[1], hyperion);
     });
   
-    it.skip('should add another book to the shelf', function() {
+    it('should add another book to the shelf', function() {
       var hyperion = {
         title: "Hyperion",
         mainCharacter: { name: "The Shrike", age: null, pronouns: "they" },
@@ -61,7 +63,7 @@ describe("shelf.js", function() {
       assert.equal(scifiShelf[2], hyperion);
     });
 
-    it.skip("shelves can only hold a certain amount of books", function () {
+    it("shelves can only hold a certain amount of books", function () {
       var hyperion = {
         title: "Hyperion",
         mainCharacter: { name: "The Shrike", age: null, pronouns: "they" },
@@ -101,11 +103,11 @@ describe("shelf.js", function() {
   });
 
   describe("unshelfBook", function() {
-    it.skip('should be a function', function() {
+    it('should be a function', function() {
       assert.isFunction(unshelfBook);
     });
   
-    it.skip('should remove a book by name', function() {
+    it('should remove a book by name', function() {
       var hyperion = {
         title: "Hyperion",
         mainCharacter: { name: "The Shrike", age: null, pronouns: "they" },
@@ -134,11 +136,11 @@ describe("shelf.js", function() {
   });
 
   describe("listTitles", function () {
-    it.skip("should be a function", function () {
+    it("should be a function", function () {
       assert.isFunction(listTitles);
     });
 
-    it.skip("should create a list of all the titles on a shelf", function () {
+    it("should create a list of all the titles on a shelf", function () {
       var hyperion = {
         title: "Hyperion",
         mainCharacter: { name: "The Shrike", age: null, pronouns: "they" },
@@ -166,7 +168,7 @@ describe("shelf.js", function() {
   });
 
   describe("searchShelf", function() {
-    it.skip("should tell us if a title is on the shelf", function() {
+    it("should tell us if a title is on the shelf", function() {
       var hyperion = {
         title: "Hyperion",
         mainCharacter: { name: "The Shrike", age: null, pronouns: "they" },

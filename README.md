@@ -60,7 +60,7 @@ problem.
     solutions. Is this the best approach to solving the problem? Is there a
     different way you could make the tests pass?  
 
-### 4: Complete the Librarian tests
+### 4: Extension (not part of the project, just stuff to do if you get to it): Complete the Librarian tests
   - Unskip the first test in `test/Librarian-test.js`, and get to work passing the tests
   - Run `npm test test/Librarian-test.js`  
   - Take time to refactor your solutions. Is this the best approach to solving the problem? 

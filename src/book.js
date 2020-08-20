@@ -11,10 +11,16 @@ function buildMainCharacter() {
   return ghoulCharacter;
 };
 
+function saveReview(title, review) {
+  if (!review.includes(title)) {
+    return review.push(title);
+  }
+};
+
 module.exports = {
   createTitle: createTitle,
   buildMainCharacter: buildMainCharacter,
-  // saveReview: saveReview,
+  saveReview: saveReview,
   // calculatePageCount: calculatePageCount,
   // writeBook: writeBook,
   // editBook: editBook

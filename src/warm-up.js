@@ -57,14 +57,22 @@ if (25 > pages) {
 // the statement 'I could read that in a day!', otherwise, log the statement
 // 'Ok, maybe I could read that in a day and a half'
 
-
+if (1000 > pages) {
+  console.log('I could read that in a day!');
+} else {
+  console.log('Ok, maybe I could read that in a day and a half');
+}
 
 // Express the following in code: If the variable "isFavorite" is true,
 // log the statement 'My favorite book is [title]!'. Otherwise, log the
 // statement 'I recently read the [title] book'. In either case, the value stored in
 // the "title" variable should be included in the logged statement.
 
-
+if (true === isFavorite) {
+  console.log(`My favorite book is ${title}!`);
+} else {
+  console.log(`I recently read the ${title} book`);
+}
 
 //------------------------- Arrays -------------------------//
 

@@ -146,3 +146,4 @@ describe("book.js", function () {
     });
   });
 });
+var hello = "hello!"

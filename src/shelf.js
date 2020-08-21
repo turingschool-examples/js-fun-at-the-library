@@ -1,6 +1,11 @@
 function shelfBook(book, sciFiShelf) {
-  sciFiShelf.unshift(book);
+  if (3 <= sciFiShelf.length) {
+    return sciFiShelf;
+  }else {
+    return sciFiShelf.unshift(book);
+  }
 };
+
 
 module.exports = {
   shelfBook: shelfBook,

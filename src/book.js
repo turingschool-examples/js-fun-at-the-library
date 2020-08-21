@@ -22,11 +22,22 @@ function calculatePageCount(bookTitle) {
   return pageCount;
 }
 
+function writeBook(bookTitle, bookCharacter, genre) {
+  var book = {
+    title: bookTitle,
+    mainCharacter: bookCharacter,
+    pageCount: calculatePageCount(bookTitle),
+    genre: genre,
+  }
+  return book;
+}
+
+
 module.exports = {
   createTitle: createTitle,
   buildMainCharacter: buildMainCharacter,
   saveReview: saveReview,
   calculatePageCount: calculatePageCount,
-  // writeBook: writeBook,
+  writeBook: writeBook,
   // editBook: editBook
 }

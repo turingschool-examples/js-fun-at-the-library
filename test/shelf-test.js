@@ -89,7 +89,6 @@ describe("shelf.js", function() {
         genre: "sciFi"
       };
       var sciFiShelf = [hyperion, dune];
-
       shelfBook(endersGame, sciFiShelf);
 
       assert.equal(sciFiShelf.length, 3);

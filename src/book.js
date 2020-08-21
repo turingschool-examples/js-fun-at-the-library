@@ -11,21 +11,21 @@ function buildMainCharacter(name,age,pronouns){
 }
 
 function saveReview(rev,reviews){
-  if (reviews.includes(rev)==false) {
+  if (!reviews.includes(rev)) {
     reviews.push(rev)
     }
 }
 
-function calculatePageCount(title) {  
-  return (title.length*20)
+function calculatePageCount(bookTitle) {  
+  return (bookTitle.length*20)
 }
 
-function writeBook(title,character,genre) {
+function writeBook(title,mainCharacter,genre) {
   return {
-    title:title,
-    mainCharacter:character,
+    title,
+    mainCharacter,
     pageCount:calculatePageCount(title),
-    genre:genre,
+    genre,
   }
 }
 

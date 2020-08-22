@@ -14,17 +14,21 @@ function unshelfBook(name, sciFiShelf) {
   }
 };
 
-function listTitles(fantasyShelf) {
+function listTitles(shelf) {
   var nameArray = [];
-  for (var i = 0; i < fantasyShelf.length; i++) {
-    nameArray.push(fantasyShelf[i].title);
+  for (var i = 0; i < shelf.length; i++) {
+    nameArray.push(shelf[i].title);
     }
   return nameArray.join(", ");
 };
+
+function searchShelf(shelf, title) {
+  return listTitles(shelf).indexOf(title) >= 0;
+}
 
 module.exports = {
   shelfBook: shelfBook,
   unshelfBook: unshelfBook,
   listTitles: listTitles,
-  // searchShelf: searchShelf
+  searchShelf: searchShelf
 };

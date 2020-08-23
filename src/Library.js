@@ -1,5 +1,5 @@
 function createLibrary(name) {
-  return library = {
+  return {
     name: name,
     shelves: {
       fantasy: [],
@@ -9,8 +9,12 @@ function createLibrary(name) {
   }
 };
 
+function addBook(library, book) {
+  library.shelves[book.genre].push(book);
+};
+
 module.exports = {
   createLibrary: createLibrary,
-  // addBook: addBook,
+  addBook: addBook,
   // checkoutBook: checkoutBook
 };

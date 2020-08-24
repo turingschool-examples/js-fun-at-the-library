@@ -14,6 +14,10 @@ class Librarian {
         return `Hello, ${patron}!`;
     }
   };
+
+  findBook() {
+    
+  }
 }
 
 module.exports = Librarian;

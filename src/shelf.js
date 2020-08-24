@@ -24,7 +24,7 @@ function listTitles(shelf) {
 
 function searchShelf(shelf, title) {
   return listTitles(shelf).indexOf(title) >= 0;
-}
+} 
 
 module.exports = {
   shelfBook: shelfBook,

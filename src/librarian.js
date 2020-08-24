@@ -15,8 +15,16 @@ class Librarian {
     }
   };
 
-  findBook() {
-    
+  findBook(bookName) {
+    for (var keys in this.library.shelves) {
+      for (var i = 0; i < this.library.shelves[keys].length; i++) {
+        if (bookName === this.library.shelves[keys][i].title) {
+          this.library.shelves[keys].splice(i, 1);
+          return `Yes, we have ${bookName}`;
+        }
+      }
+    }
+    return `Sorry, we do not have ${bookName}`
   }
 }
 

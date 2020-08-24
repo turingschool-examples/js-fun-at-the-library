@@ -25,6 +25,11 @@ class Librarian {
       }
     }
     return `Sorry, we do not have ${bookName}`
+  };
+
+  calculateLateFee(daysLate) {
+    var fee = daysLate * 0.25;
+    return Math.ceil(fee);
   }
 }
 

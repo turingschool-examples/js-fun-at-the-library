@@ -1,8 +1,11 @@
 var assert = require("chai").assert;
-var shelfBook = require("../src/shelf.js").shelfBook;
-var unshelfBook = require("../src/shelf.js").unshelfBook;
-var listTitles = require("../src/shelf.js").listTitles;
-var searchShelf = require("../src/shelf.js").searchShelf;
+
+var {
+  shelfBook,
+  unshelfBook,
+  listTitles,
+  searchShelf
+} = require("../src/shelf.js")
 
 describe("shelf.js", function() {
   describe("shelfBook", function() {

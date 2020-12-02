@@ -1,8 +1,7 @@
 
-
 module.exports = {
-  // shelfBook: shelfBook,
-  // unshelfBook: unshelfBook,
-  // listTitles: listTitles,
-  // searchShelf: searchShelf
+  // shelfBook,
+  // unshelfBook,
+  // listTitles,
+  // searchShelf
 };

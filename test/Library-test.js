@@ -1,7 +1,10 @@
 var assert = require("chai").assert;
-var createLibrary = require("../src/library.js").createLibrary;
-var addBook = require("../src/library.js").addBook;
-var checkoutBook = require("../src/library.js").checkoutBook;
+
+var {
+  createLibrary,
+  addBook,
+  checkoutBook
+} = require("../src/library.js")
 
 describe("library.js", function() {
   describe("createLibrary", function() {
@@ -100,7 +103,7 @@ describe("library.js", function() {
       addBook(denverLibrary, bornACrime);
       addBook(denverLibrary, prideAndPrejudice);
   
-      var result = checkoutBook(denverLibrary, "Pride and Prejudice");
+      var result = checkoutBook(denverLibrary, "Pride and Prejudice", "fiction");
   
       assert.deepEqual(denverLibrary.shelves, {fantasy: [dracula], fiction: [], nonFiction: [bornACrime]});;
       assert.equal(result, "You have now checked out Pride and Prejudice from the Denver Public Library")
@@ -109,7 +112,7 @@ describe("library.js", function() {
     it.skip("should only checkout a book if the book is on the shelves", function() {
       var denverLibrary = createLibrary("Denver Public Library");
           
-      var error = checkoutBook(denverLibrary, "The Fifth Season");
+      var error = checkoutBook(denverLibrary, "The Fifth Season", "fantasy");
       
       assert.equal(error, "Sorry, there are currently no copies of The Fifth Season available at the Denver Public Library");
     });

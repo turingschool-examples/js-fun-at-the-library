@@ -1,7 +1,9 @@
 var assert = require("chai").assert;
 var Librarian = require('../src/Librarian.js');
-var createLibrary = require('../src/library.js').createLibrary;
-var addBook = require('../src/library.js').addBook;
+
+var {
+  createLibrary, addBook
+} = require('../src/library.js')
 
 describe('Librarian (class)', function() {
   it.skip('should instantiate a librarian object', function() {
@@ -82,8 +84,6 @@ describe('Librarian (class)', function() {
     var book = { title: 'The Fifth Season', genre: 'fantasy' }
 
     addBook(librarian.library, book);
-
-    var bookConfirmation = librarian.findBook("The Fifth Season");
 
     assert.deepEqual(librarian.library.shelves.fantasy, []);
   });

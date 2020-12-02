@@ -1,10 +1,14 @@
 var assert = require("chai").assert;
-var createTitle = require("../src/book.js").createTitle;
-var buildMainCharacter = require("../src/book.js").buildMainCharacter;
-var calculatePageCount = require("../src/book.js").calculatePageCount;
-var saveReview = require("../src/book.js").saveReview;
-var writeBook = require("../src/book.js").writeBook;
-var editBook = require("../src/book.js").editBook;
+
+var {
+  createTitle,
+  buildMainCharacter,
+  calculatePageCount,
+  saveReview,
+  writeBook,
+  editBook
+} = require("../src/book.js");
+
 
 describe("book.js", function () {
   describe("createTitle", function() {

@@ -85,7 +85,7 @@ describe('Librarian (class)', function() {
 
     addBook(librarian.library, book);
 
-    librarian.findBook('The Fifth Season')
+    librarian.findBook('The Fifth Season');
 
     assert.deepEqual(librarian.library.shelves.fantasy, []);
   });

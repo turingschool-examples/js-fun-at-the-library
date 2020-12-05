@@ -29,13 +29,11 @@ function listTitles(shelf) {
 
 
 function searchShelf(shelfOn, titleNeeded) {
-  console.log(shelfOn);
-  console.log(titleNeeded);
   if (titleNeeded === shelfOn[0].title) {
     return true;
   } else if (titleNeeded === shelfOn[1].title) {
     return true;
-  } else {
+  }  else {
     return false;
   }
 }

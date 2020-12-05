@@ -6,7 +6,8 @@ function buildMainCharacter(name, age, pronouns) {
   return {
     name: name,
     age: age,
-    pronouns: pronouns}
+    pronouns: pronouns,
+  }
 }
 
 function saveReview(rev, reviews) {

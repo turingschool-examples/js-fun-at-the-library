@@ -1,8 +1,5 @@
 
 function createLibrary(newLibrary) {
-  // var fantasy = [];
-  // var fiction = [];
-  // var nonFiction = [];
   var libraryData = {
     name: newLibrary,
     shelves: {
@@ -50,7 +47,6 @@ function checkoutBook(libraryName, toTakeOut, genre) {
         return `You have now checked out ${toTakeOut} from the ${libraryName.name}`;
       }
     }
-    return `Sorry, there are currently no copies of ${toTakeOut} available at the ${libraryName.name}`;
   } else {
     return `Sorry, there are currently no copies of ${toTakeOut} available at the ${libraryName.name}`;
   }

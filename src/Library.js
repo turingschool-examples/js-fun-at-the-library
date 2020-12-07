@@ -1,5 +1,5 @@
 function createLibrary(libraryName) {
-  var building = {
+  var library = {
     name: `${libraryName}`,
     shelves: {
       fantasy: [],
@@ -7,26 +7,26 @@ function createLibrary(libraryName) {
       nonFiction: []
     }
   }
-  return building;
-}
+  return library;
+};
 
-function addBook(theLibrary, book) {
-  createLibrary(theLibrary);
-  theLibrary.shelves[book.genre].push(book);
-}
+function addBook(libraryName, book) {
+  createLibrary(libraryName);
+  libraryName.shelves[book.genre].push(book);
+};
 
-function checkoutBook(theLibrary, book, genre) {
-  var booksOnShelf = theLibrary.shelves[genre].length
+function checkoutBook(libraryName, book, genre) {
+  var booksOnShelf = libraryName.shelves[genre].length;
   if (booksOnShelf === 0) {
-    var statement = `Sorry, there are currently no copies of ${book} available at the ${theLibrary.name}`
-  } else if(theLibrary.shelves[genre][0].title === book) {
-    var statement = `You have now checked out ${book} from the ${theLibrary.name}`
-    theLibrary.shelves[genre].pop()
+    var statement = `Sorry, there are currently no copies of ${book} available at the ${libraryName.name}`
+  } else if(libraryName.shelves[genre][0].title === book) {
+    var statement = `You have now checked out ${book} from the ${libraryName.name}`
+    libraryName.shelves[genre].pop()
   } else {
-    var statement = `Sorry, there are currently no copies of ${book} available at the ${theLibrary.name}`
+    var statement = `Sorry, there are currently no copies of ${book} available at the ${libraryName.name}`
   }
-  return statement
-}
+  return statement;
+};
 
 module.exports = {
   createLibrary,

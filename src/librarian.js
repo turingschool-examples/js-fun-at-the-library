@@ -1,9 +1,10 @@
 class Librarian {
-  constructor(librarianName) {
-    this.name = librarianName
-  }
+  constructor(librarianName, libraryName) {
+    this.name = librarianName,
+    this.library = libraryName
+    }
 
-    greetPatron(patronName, isMorning) {
+  greetPatron(patronName, isMorning) {
         if (isMorning === true) {
           return `Good morning, ${patronName}!`
         } else {
@@ -11,15 +12,9 @@ class Librarian {
         }
     }
 
-    createLibrary(libraryName) {
-      this.library = libraryName
-    }
-
-    calculateLateFee(numberDaysLate) {
+  calculateLateFee(numberDaysLate) {
       return Math.ceil(numberDaysLate*(0.25))
     }
-
 }
-
 
 module.exports = Librarian;

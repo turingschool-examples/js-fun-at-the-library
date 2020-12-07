@@ -64,21 +64,24 @@ console.log(isShortStory)
 // the statement 'I could read that in a day!', otherwise, log the statement
 // 'Ok, maybe I could read that in a day and a half'
 
-if (pages < 1000) {
+function printLengthComment(pages) {
+  if (pages < 1000) {
   console.log("I could read that in a day!")
 } else {
   console.log("Ok, maybe I could read that in a day and a half");
 }
-
+}
 // Express the following in code: If the variable "isFavorite" is true,
 // log the statement 'My favorite book is [title]!'. Otherwise, log the
 // statement 'I recently read the [title] book'. In either case, the value stored in
 // the "title" variable should be included in the logged statement.
 
-if (isFavorite === true) {
+function printFavoriteComment(isFavorite) {
+  if (isFavorite === true) {
   console.log(`My favorite book is ${title}`);
 } else {
   console.log(`I recently read the ${title} book`);
+}
 }
 
 //------------------------- Arrays -------------------------//
@@ -86,12 +89,12 @@ if (isFavorite === true) {
 
 // Create a new variable "books" and assign it to an Array of 5 different
 // book titles, represented by their names as Strings.
-var books = [""]
+var books = ["Sorceror's Stone". "Half-blood Prince", "Goblet of Fire", "Deathly Hallows", "Order of the Pheonix"]
 
 // Write the code to access the 3rd element of the Array, using bracket
 // notation.
 
-books[3]
+books[2]
 
 // Create a new variable "belowTwoHundred" and assign it to an Array of 12
 // different numbers below two hundred.

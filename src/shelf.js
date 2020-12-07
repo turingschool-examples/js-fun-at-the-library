@@ -36,6 +36,7 @@ function searchShelf(shelf, bookTitle) {
   for (i = 0; i < shelf.length; i++) {
     onShelf.push(shelf[i].title);
   };
+
   if (onShelf.includes(bookTitle)) {
     return true
     } else {
@@ -59,3 +60,4 @@ module.exports = {
   listTitles,
   searchShelf
 };
+//

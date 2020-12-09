@@ -11,8 +11,7 @@ function createLibrary(libraryName) {
 };
 
 function addBook(libraryName, book) {
-  createLibrary(libraryName);
-  libraryName.shelves[book.genre].push(book);
+  libraryName.shelves[book.genre].push(book)
 };
 
 function checkoutBook(libraryName, book, genre) {

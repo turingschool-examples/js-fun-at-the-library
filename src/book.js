@@ -14,7 +14,7 @@ const createTitle = title => `The ${title}`;
 //   }
 // }
 
-const buildMainCharacter = (name, age, pronouns) => ({name: name, age: age, pronouns: pronouns});
+const buildMainCharacter = (name, age, pronouns) => ({name, age, pronouns});
 
 // function saveReview(rev, reviews) {
 //   if (reviews.length === 0) {
@@ -60,7 +60,12 @@ const calculatePageCount = bookTitle => bookTitle.split('').length * 20;
 //   return book;
 // }
 
-const writeBook = (bookTitle, bookCharacter, genre) => ({title: bookTitle, mainCharacter: bookCharacter, pageCount: calculatePageCount(bookTitle), genre: genre});
+const writeBook = (bookTitle, bookCharacter, genre) => ({
+  title: bookTitle,
+  mainCharacter: bookCharacter,
+  pageCount: calculatePageCount(bookTitle),
+  genre
+});
 
 // function editBook(book){
 //   book.pageCount = book.pageCount * .75;

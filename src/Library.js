@@ -33,8 +33,6 @@ const createLibrary = (library) => ({
 
 const addBook = (library, book) => library.shelves[book.genre].push(book);
 
-
-
 // function checkoutBook(libraryName, toTakeOut, genre) {
 //   if (genre === "fantasy") {
 //     for (var i = 0; i < libraryName.shelves.fantasy.length; i++) {
@@ -75,7 +73,6 @@ function checkoutBook(library, bookTitle, bookGenre) {
     return `Sorry, there are currently no copies of ${bookTitle} available at the ${library.name}`;
   }
 }
-
 
 module.exports = {
   createLibrary,

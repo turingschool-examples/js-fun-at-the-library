@@ -13,7 +13,7 @@ class Librarian {
     }
   }
   findBook(bookLookingFor) {
-     const bookToRemove = this.library.shelves.fantasy.findIndex((book) => {
+    const bookToRemove = this.library.shelves.fantasy.findIndex((book) => {
       return book.title === bookLookingFor;
     })
     if (bookToRemove !== -1) {
@@ -63,4 +63,4 @@ class Librarian {
 // }
 
 
- module.exports = Librarian;
+module.exports = Librarian;

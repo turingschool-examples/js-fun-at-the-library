@@ -60,10 +60,10 @@ const calculatePageCount = bookTitle => bookTitle.split('').length * 20;
 //   return book;
 // }
 
-const writeBook = (bookTitle, bookCharacter, genre) => ({
-  title: bookTitle,
-  mainCharacter: bookCharacter,
+const writeBook = (title, mainCharacter, genre) => ({
+  mainCharacter,
   pageCount: calculatePageCount(bookTitle),
+  title,
   genre
 });
 

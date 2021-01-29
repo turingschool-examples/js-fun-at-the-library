@@ -31,13 +31,6 @@ const buildMainCharacter = (name, age, pronouns) => ({name, age, pronouns});
 //   }
 // }
 
-// refactor with includes array method
-// function saveReview(rev, reviews) {
-//   if (reviews.includes(rev) === false) {
-//     reviews.push(rev);
-//   }
-// }
-
 const saveReview = (rev, reviews) => {
   if (reviews.includes(rev) === false) {
     reviews.push(rev);

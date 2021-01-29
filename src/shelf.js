@@ -22,7 +22,7 @@ const shelfBook = (book, shelf) => {
 //   }
 // }
 
-function unshelfBook(book, shelf) {
+const unshelfBook = (book, shelf) => {
   var foundIndex = shelf.findIndex((bookToRemove) => {
     return bookToRemove.title === book;
   })
@@ -43,7 +43,7 @@ function unshelfBook(book, shelf) {
 //   return titles;
 // }
 
-function listTitles(shelf) {
+const listTitles = shelf => {
   const bookTitles = shelf.map(book => book.title);
   return bookTitles.join(', ');
 }
@@ -58,7 +58,7 @@ function listTitles(shelf) {
 //   }
 // }
 
-function searchShelf(shelf, titleNeeded) {
+const searchShelf = (shelf, titleNeeded) => {
   const bookTitles = shelf.map(book => book.title);
   if (bookTitles.includes(titleNeeded) === true) {
     return true;

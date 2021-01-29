@@ -62,7 +62,7 @@ const addBook = (library, book) => library.shelves[book.genre].push(book);
 //   }
 // }
 
-function checkoutBook(library, bookTitle, bookGenre) {
+const checkoutBook = (library, bookTitle, bookGenre) => {
   var foundBook = library.shelves[bookGenre].findIndex((bookToRemove) => {
     return bookToRemove.title === bookTitle;
   })

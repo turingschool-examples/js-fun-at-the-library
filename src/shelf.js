@@ -27,7 +27,7 @@ function unshelfBook(book, shelf) {
     return bookToRemove.title === book;
   })
   if (foundIndex) {
-    shelf.splice(foundIndex,1);
+    shelf.splice(foundIndex, 1);
   }
 }
 
@@ -68,8 +68,8 @@ function searchShelf(shelf, titleNeeded) {
 }
 
 module.exports = {
-shelfBook,
-unshelfBook,
-listTitles,
-searchShelf
+  shelfBook,
+  unshelfBook,
+  listTitles,
+  searchShelf
 };

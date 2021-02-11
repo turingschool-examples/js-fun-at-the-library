@@ -40,10 +40,15 @@ describe("book.js", function () {
   
     it.skip("should create a character object", function () {
       var ghoulCharacter = buildMainCharacter("Vassya", 16, "she/her");
+      var bakerCharacter = buildMainCharacter("Hannah", 30, "she/her");
   
       assert.equal(ghoulCharacter.name, "Vassya");
       assert.equal(ghoulCharacter.age, 16);
       assert.equal(ghoulCharacter.pronouns, "she/her");
+
+      assert.equal(bakerCharacter.name, "Hannah");
+      assert.equal(bakerCharacter.age, 30);
+      assert.equal(bakerCharacter.pronouns, "she/her");
     });
   });
 
@@ -120,7 +125,7 @@ describe("book.js", function () {
     });
   
     it.skip("should return a different book object", function () {
-      var dragonTitle = createTitle("The Dragon in the Summer");
+      var dragonTitle = createTitle("Dragon in the Summer");
       var dragonCharacter = buildMainCharacter("Dana", 25, "they/them");
       var dragonBook = writeBook(dragonTitle, dragonCharacter, "fantasy");
   
@@ -146,6 +151,19 @@ describe("book.js", function () {
       editBook(ghoulBook);
   
       assert.equal(ghoulBook.pageCount, 255);
+    });
+
+
+    it.skip("should decrease a different book's page count to be three quarters of what it originally was", function () {
+      var dragonTitle = createTitle("Dragon in the Summer");
+      var dragonCharacter = buildMainCharacter("Dana", 25, "they/them");
+      var dragonBook = writeBook(dragonTitle, dragonCharacter, "fantasy");
+      
+      assert.equal(dragonBook.pageCount, 560);
+
+      editBook(dragonBook);
+
+      assert.equal(dragonBook.pageCount, 420);
     });
   });
 });

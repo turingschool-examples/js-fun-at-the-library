@@ -12,7 +12,7 @@ describe("shelf.js", function() {
     it.skip("should be a function", function() {
       assert.isFunction(shelfBook);
     });
-  
+
     it.skip("should add books to a specific shelf", function() {
       var hyperion = {
         title: "Hyperion",
@@ -27,14 +27,14 @@ describe("shelf.js", function() {
         genre: "sciFi"
       };
       var sciFiShelf = [];
-  
+
       shelfBook(hyperion, sciFiShelf);
       shelfBook(dune, sciFiShelf);
-  
+
       assert.equal(sciFiShelf[0], dune);
       assert.equal(sciFiShelf[1], hyperion);
     });
-  
+
     it.skip("should add another book to the shelf", function() {
       var hyperion = {
         title: "Hyperion",
@@ -55,10 +55,10 @@ describe("shelf.js", function() {
         genre: "sciFi"
       };
       var sciFiShelf = [hyperion];
-  
+
       shelfBook(endersGame, sciFiShelf);
       shelfBook(dune, sciFiShelf);
-  
+
       assert.equal(sciFiShelf[0], dune);
       assert.equal(sciFiShelf[1], endersGame);
       assert.equal(sciFiShelf[2], hyperion);
@@ -107,7 +107,7 @@ describe("shelf.js", function() {
     it.skip("should be a function", function() {
       assert.isFunction(unshelfBook);
     });
-  
+
     it.skip("should remove a book by name", function() {
       var hyperion = {
         title: "Hyperion",
@@ -128,11 +128,42 @@ describe("shelf.js", function() {
         genre: "sciFi"
       };
       var sciFiShelf = [hyperion, dune, endersGame];
-  
+
       unshelfBook("Dune", sciFiShelf);
-      
+
       assert.equal(sciFiShelf.length, 2);
       assert.deepEqual(sciFiShelf, [hyperion, endersGame]);
+
+      unshelfBook("Hyperion", sciFiShelf);
+
+      assert.equal(sciFiShelf.length, 1);
+      assert.deepEqual(sciFiShelf, [endersGame]);
+    });
+
+    it.skip("should remove a book on a different shelf by name", function() {
+      var bossypants = {
+        title: "Bossypants",
+        mainCharacter: { name: "Tina Fey", age: 50, pronouns: "she/her" },
+        pageCount: 277,
+        genre: "nonFiction"
+      };
+      var whyNotMe = {
+        title: "Why Not Me?",
+        mainCharacter: { name: "Mindy Kaling", age: 41, pronouns: "she/her" },
+        pageCount: 240,
+        genre: "nonFiction"
+      };
+      var nonFictionShelf = [bossypants, whyNotMe];
+
+      unshelfBook("Why Not Me?", nonFictionShelf);
+
+      assert.equal(nonFictionShelf.length, 1);
+      assert.deepEqual(nonFictionShelf, [bossypants]);
+
+      unshelfBook("Bossypants", nonFictionShelf);
+
+      assert.equal(nonFictionShelf.length, 0);
+      assert.deepEqual(nonFictionShelf, []);
     });
   });
 
@@ -186,6 +217,25 @@ describe("shelf.js", function() {
 
       assert.equal(searchShelf(sciFiShelf, "Hyperion"), true);
       assert.equal(searchShelf(sciFiShelf, "The Fifth Season"), false);
+    });
+
+    it.skip("should tell us if a title is on a different shelf", function() {
+      var bossypants = {
+        title: "Bossypants",
+        mainCharacter: { name: "Tina Fey", age: 50, pronouns: "she/her" },
+        pageCount: 277,
+        genre: "nonFiction"
+      };
+      var whyNotMe = {
+        title: "Why Not Me?",
+        mainCharacter: { name: "Mindy Kaling", age: 41, pronouns: "she/her" },
+        pageCount: 240,
+        genre: "nonFiction"
+      };
+      var nonFictionShelf = [bossypants, whyNotMe];
+
+      assert.equal(searchShelf(nonFictionShelf, "Why Not Me?"), true);
+      assert.equal(searchShelf(nonFictionShelf, "Yes Please"), false);
     });
   });
 });

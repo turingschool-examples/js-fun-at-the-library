@@ -15,18 +15,18 @@ describe("book.js", function () {
     it.skip("should be a function", function () {
       assert.isFunction(createTitle);
     });
-  
+
     it.skip("should take in a title and return a modified title", function () {
       var bookIdea = createTitle("Storm's Awakening");
-  
+
       assert.equal(bookIdea, "The Storm's Awakening");
     });
-  
+
     it.skip("should be able to create many modified titles", function () {
       var sushiTitle = createTitle("Dancing Sushi");
       var dragonTitle = createTitle("Dragon in the Summer");
       var ghostTitle = createTitle("Teenage Ghoul");
-  
+
       assert.equal(sushiTitle, "The Dancing Sushi");
       assert.equal(dragonTitle, "The Dragon in the Summer");
       assert.equal(ghostTitle, "The Teenage Ghoul");
@@ -37,11 +37,11 @@ describe("book.js", function () {
     it.skip("should be a function (comment the function back into the module.exports object in book.js)", function () {
       assert.isFunction(buildMainCharacter);
     });
-  
+
     it.skip("should create a character object", function () {
       var ghoulCharacter = buildMainCharacter("Vassya", 16, "she/her");
       var bakerCharacter = buildMainCharacter("Hannah", 30, "she/her");
-  
+
       assert.equal(ghoulCharacter.name, "Vassya");
       assert.equal(ghoulCharacter.age, 16);
       assert.equal(ghoulCharacter.pronouns, "she/her");
@@ -92,19 +92,19 @@ describe("book.js", function () {
     it.skip("should be a function (comment the function back into the module.exports object in book.js)", function () {
       assert.isFunction(calculatePageCount);
     });
-  
+
     it.skip("should add 20 pages per letter in the title", function () {
       var bookTitle = createTitle("Teenage Ghoul");
       var bookPageCount = calculatePageCount(bookTitle);
-  
+
       assert.equal(bookPageCount, 340);
     });
-  
+
     it.skip("should add 20 pages per letter for a different title", function () {
-      var bookTitle = createTitle("The Dragon in the Summer");
+      var bookTitle = createTitle("Dragon in the Summer");
       var bookPageCount = calculatePageCount(bookTitle);
-  
-      assert.equal(bookPageCount, 560);
+
+      assert.equal(bookPageCount, 480);
     });
   });
 
@@ -112,26 +112,26 @@ describe("book.js", function () {
     it.skip("should be a function", function () {
       assert.isFunction(writeBook);
     });
-  
+
     it.skip("should return a book object", function () {
       var bookTitle = createTitle("Teenage Ghoul");
       var bookCharacter = buildMainCharacter("Vassya", 16, "she/her");
       var book = writeBook(bookTitle, bookCharacter, "fantasy");
-  
+
       assert.equal(book.title, bookTitle);
       assert.equal(book.mainCharacter, bookCharacter);
       assert.equal(book.pageCount, 340);
       assert.equal(book.genre, "fantasy");
     });
-  
+
     it.skip("should return a different book object", function () {
       var dragonTitle = createTitle("Dragon in the Summer");
       var dragonCharacter = buildMainCharacter("Dana", 25, "they/them");
       var dragonBook = writeBook(dragonTitle, dragonCharacter, "fantasy");
-  
+
       assert.equal(dragonBook.title, dragonTitle);
       assert.equal(dragonBook.mainCharacter, dragonCharacter);
-      assert.equal(dragonBook.pageCount, 560);
+      assert.equal(dragonBook.pageCount, 480);
       assert.equal(dragonBook.genre, "fantasy");
     });
   });
@@ -140,16 +140,16 @@ describe("book.js", function () {
     it.skip("should be a function", function () {
       assert.isFunction(editBook);
     });
-  
+
     it.skip("should decrease the book's page count to be three quarters of what it originally was", function () {
       var ghoulTitle = createTitle("Teenage Ghoul");
       var ghoulCharacter = buildMainCharacter("Vassya", 16, "she/her");
       var ghoulBook = writeBook(ghoulTitle, ghoulCharacter, "mystery");
-  
+
       assert.equal(ghoulBook.pageCount, 340);
 
       editBook(ghoulBook);
-  
+
       assert.equal(ghoulBook.pageCount, 255);
     });
 
@@ -158,12 +158,12 @@ describe("book.js", function () {
       var dragonTitle = createTitle("Dragon in the Summer");
       var dragonCharacter = buildMainCharacter("Dana", 25, "they/them");
       var dragonBook = writeBook(dragonTitle, dragonCharacter, "fantasy");
-      
-      assert.equal(dragonBook.pageCount, 560);
+
+      assert.equal(dragonBook.pageCount, 480);
 
       editBook(dragonBook);
 
-      assert.equal(dragonBook.pageCount, 420);
+      assert.equal(dragonBook.pageCount, 360);
     });
   });
 });

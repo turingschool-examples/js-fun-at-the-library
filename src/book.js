@@ -44,8 +44,9 @@ function writeBook(title, bookCharacter, calculatePageCount, genre) {
 };
 
 function editBook(book) {
-return book.pageCount * .75;  
-}
+return book.pageCount * .75;
+};
+
 module.exports = {
   createTitle,
   buildMainCharacter,

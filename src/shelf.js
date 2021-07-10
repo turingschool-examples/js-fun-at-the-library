@@ -26,14 +26,12 @@ function listTitles(listOfBooks) {
     return listOfTitles;
 };
 
-// Function that search on the shelf if title exists staring at the end of the shelf array.
+// Function that search on the shelf if title exists.
 function searchShelf(shelf, bookTitle) {
       var isOnShelf = false;
       for (var i = 0; i < shelf.length; i++) {
        if (shelf[i].title === bookTitle) {
           return isOnShelf = true;
-      // } else if (shelf[i].title === bookTitle){
-      //   isOnShelf = true;
       };
     };
       return isOnShelf ;

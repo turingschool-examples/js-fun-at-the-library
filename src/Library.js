@@ -21,8 +21,20 @@ function addBook(library, bookToAdd) {
     };
 };
 
+//Function that checks out a book if is on a shelf.
+function checkoutBook(library, bookTitle, genre) {
+    var findShelf = library.shelves[genre];
+    for (var i = 0; i < findShelf.length; i++) {
+        if (findShelf[i].title === bookTitle) {
+          findShelf.splice(i, 1);
+          return `You have now checked out ${bookTitle} from the ${library.name}`
+        } 
+    }
+      return `Sorry, there are currently no copies of ${bookTitle} available at the Denver Public Library`;
+};
+
 module.exports = {
   createLibrary,
   addBook,
-  // checkoutBook
+  checkoutBook
 };

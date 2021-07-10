@@ -4,26 +4,30 @@
 function shelfBook(book, shelf) {
      if (shelf.length < 3) {
       shelf.unshift(book);
-     }
+     };
 };
 //Function that remove a book from the array shelf.
 function unshelfBook(bookName, shelf) {
       for (var i = 0; i < shelf.length; i++) {
         if (shelf[i].title === bookName) {
           shelf.splice(i, 1);
-        }
-      }
+        };
+      };
 };
 
 //Function that lists a string with the titles of the books.
 function listTitles(listOfBooks) {
-  var listOfTitles = "";
+   var listOfTitles = [];
     for (i = 0; i < listOfBooks.length; i++){
       var bookTitle = listOfBooks[i].title;
-      listOfTitles += bookTitle + ", "; 
-    }
-    listOfTitles = listOfTitles.slice(0, listOfTitles.length - 2)
-    return listOfTitles;
+          listOfTitles.push(bookTitle);
+      //listOfTitles += bookTitle + ", "; 
+    };
+    var result = listOfTitles.join(", ")
+  //   listOfTitles = listOfTitles.slice(0, listOfTitles.length - 2);
+  //    var listOfTitles = listOfBooks.title.join();
+  //  return listOfTitles;
+  return result;
 };
 
 // Function that search on the shelf if title exists.

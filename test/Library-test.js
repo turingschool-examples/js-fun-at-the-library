@@ -4,7 +4,7 @@ var {
   createLibrary,
   addBook,
   checkoutBook
-} = require("../src/library.js")
+} = require("../src/Library.js")
 
 describe("library.js", function() {
   describe("createLibrary", function() {
@@ -54,7 +54,7 @@ describe("library.js", function() {
       assert.equal(denverLibrary.shelves.fantasy[0], dracula);
     });
 
-    it("should add books to the correct shelves automatically", function() {
+    it.only("should add books to the correct shelves automatically", function() {
       var denverLibrary = createLibrary("Denver Public Library");
       var dracula = {
         title: "Dracula",
@@ -68,7 +68,7 @@ describe("library.js", function() {
         pageCount: 187,
         genre: 'nonFiction'
       }
-
+        
       addBook(denverLibrary, dracula);
       addBook(denverLibrary, paleBlueDot);
 

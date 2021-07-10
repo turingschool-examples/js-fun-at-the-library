@@ -11,13 +11,14 @@ function createLibrary(libraryName) {
     return library;
 };
 
-
+// Function adds a book to a library on a specific shelf
 function addBook(library, bookToAdd) {
     var shelf = bookToAdd.genre;
-    if (shelf === library.shelves["shelf"]) {
-      library.shelves.shelf.push(bookToAdd);
-    }
-    return library;
+    for (var key in library.shelves) {
+      if (key === shelf) {
+        library.shelves[shelf].unshift(bookToAdd);
+      };
+    };
 };
 
 module.exports = {

@@ -16,9 +16,13 @@ function buildMainCharacter(name, age, pronouns) {
 };
 // Function to save new reviews in an array, without repeating any review.
 function saveReview(newReview, reviews) {
-    if (!reviews.includes(newReview)) {
-      reviews.push(newReview);
+    for (var i = 0; i < reviews.length; i++) {
+      if (reviews[i] === newReview) {
+         return reviews
+      }
+        
     };
+    return reviews.push(newReview);
 };
 // Function to add 20 pages per letter in the title.
 function calculatePageCount(title) {

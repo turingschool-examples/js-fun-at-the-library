@@ -33,8 +33,9 @@ const buildMainCharacter = (name, age, pronouns) => ({ name, age, pronouns });
 //     return reviews.push(newReview);
 // };
 
-const saveReview = (newReview, reviews) => !reviews.includes(newReview) ? reviews.push(newReview): reviews
-
+const saveReview = (newReview, reviews) => (
+  !reviews.includes(newReview) ? reviews.push(newReview): reviews
+)
 
 // Function to add 20 pages per letter in the title.
 // function calculatePageCount(title) {

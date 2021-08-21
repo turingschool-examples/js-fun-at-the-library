@@ -11,12 +11,15 @@
 //     return library;
 // };
 
-const createLibrary = (libraryName) => ({name:libraryName, 
-  shelves: {
+const createLibrary = (libraryName) => (
+  {
+    name:libraryName, 
+    shelves: {
     fantasy: [],
     fiction: [],
     nonFiction: [],
-  }})
+  }
+})
 
 // Function adds a book to a library on a specific shelf
 // function addBook(library, bookToAdd) {
@@ -28,14 +31,19 @@ const createLibrary = (libraryName) => ({name:libraryName,
 //     };
 // };
 
+// const addBook = (library, book) => {
+//   if (book.genre === 'fantasy') {
+//     library.shelves.fantasy.unshift(book)
+//   } else if (book.genre === 'fiction') {
+//     library.shelves.fiction.unshift(book)
+//   } else if (book.genre === 'nonFiction') {
+//     library.shelves.nonFiction.unshift(book)
+//   };
+// };
+
 const addBook = (library, book) => {
-  if (book.genre === 'fantasy') {
-    library.shelves.fantasy.unshift(book)
-  } else if (book.genre === 'fiction') {
-    library.shelves.fiction.unshift(book)
-  } else if (book.genre === 'nonFiction') {
-    library.shelves.nonFiction.unshift(book)
-  };
+  let shelvesObject = Object.keys(library.shelves);
+  shelvesObject.find(shelf => (book.genre === shelf) && library.shelves[shelf].unshift(book)); 
 };
 
 //Function that checks out a book if is on a shelf.

@@ -7,7 +7,7 @@
 //      };
 // };
 
-const shelfBook = (book, shelf) => { (shelf.length < 3) ? shelf.unshift(book) : shelf }
+const shelfBook = (book, shelf) => { (shelf.length < 3) && shelf.unshift(book) }
 
 //Function that remove a book from the array shelf.
 // function unshelfBook(bookName, shelf) {
@@ -18,7 +18,9 @@ const shelfBook = (book, shelf) => { (shelf.length < 3) ? shelf.unshift(book) : 
 //       };
 // };
 
-const unshelfBook = (bookName, shelf) => shelf.forEach((element, index) => { (bookName === element.title) ? shelf.splice(index, 1) : shelf });
+const unshelfBook = (bookName, shelf) => shelf.forEach((element, index) => (
+  (bookName === element.title) ? shelf.splice(index, 1) : shelf 
+  ));
 
 //Function that lists a string with the titles of the books.
 // function listTitles(listOfBooks) {

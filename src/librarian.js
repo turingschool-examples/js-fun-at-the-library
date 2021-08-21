@@ -3,6 +3,7 @@ class Librarian {
     this.name = name;
     this.library = library;
   };
+  
 
   greetPatron(patron, isMorning) {
     if (isMorning === true) {
@@ -12,22 +13,23 @@ class Librarian {
   };
 
   findBook(bookToFind) {
-    var isOnLibrary = false;
-    for (var key in this.library.shelves) {
-        for (var i = 0; i < this.library.shelves[key].length; i++) {
-          if (bookToFind === this.library.shelves[key][i].title) {
-            this.library.shelves[key].splice(i, 1);
-            return `Yes, we have ${bookToFind}`; 
-          };
-        };
-        return `Sorry, we do not have ${bookToFind}`;
-    };
+    let isOnLibrary = false;
+    let confirmation = `Sorry, we do not have ${bookToFind}`;
+    let bookObjects = Object.values(this.library.shelves);
+    
+    bookObjects.forEach((shelf) => shelf.find((book, index) => {
+      if (bookToFind === book.title) {
+        this.library.shelves[book.genre].splice(index, 1);
+        confirmation = `Yes, we have ${bookToFind}`;
+      };
+    }));
+      return confirmation
   };
 
   calculateLateFee(numberOfDaysLate) {
-    var lateFee = numberOfDaysLate * 0.25;
+    let lateFee = numberOfDaysLate * 0.25;
     return Math.ceil(lateFee);
-  }
+  };
 
   };
 

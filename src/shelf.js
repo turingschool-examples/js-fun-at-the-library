@@ -7,7 +7,7 @@
 //      };
 // };
 
-shelfBook = (book, shelf) => { (shelf.length < 3) ? shelf.unshift(book) : shelf }
+const shelfBook = (book, shelf) => { (shelf.length < 3) ? shelf.unshift(book) : shelf }
 
 //Function that remove a book from the array shelf.
 // function unshelfBook(bookName, shelf) {
@@ -18,7 +18,7 @@ shelfBook = (book, shelf) => { (shelf.length < 3) ? shelf.unshift(book) : shelf 
 //       };
 // };
 
-unshelfBook = (bookName, shelf) => shelf.forEach((element, index) => { (bookName === element.title) ? shelf.splice(index, 1) : shelf });
+const unshelfBook = (bookName, shelf) => shelf.forEach((element, index) => { (bookName === element.title) ? shelf.splice(index, 1) : shelf });
 
 //Function that lists a string with the titles of the books.
 // function listTitles(listOfBooks) {
@@ -35,7 +35,7 @@ unshelfBook = (bookName, shelf) => shelf.forEach((element, index) => { (bookName
 //   return result;
 // };
 
-listTitles = (shelf) => {
+const listTitles = (shelf) => {
   let titles = [];
   shelf.forEach(element => {titles.push(element.title)});
   return titles.join(', ');
@@ -52,7 +52,7 @@ listTitles = (shelf) => {
 //       return isOnShelf ;
 // };
 
-searchShelf = (shelf, bookName) => {
+const searchShelf = (shelf, bookName) => {
   let isOnShelf = null;
   shelf.forEach(element => { (bookName === element.title) ? isOnShelf = true : isOnShelf = false });
   return isOnShelf;

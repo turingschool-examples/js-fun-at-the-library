@@ -7,7 +7,7 @@
 
 // Arrow function
 
-createTitle = title => 'The ' + title;
+const createTitle = title => 'The ' + title;
 
 // Function to build a Main Character object with 3 properties.
 // function buildMainCharacter(name, age, pronouns) {
@@ -20,7 +20,7 @@ createTitle = title => 'The ' + title;
 
 // };
 
-buildMainCharacter = (name, age, pronouns) => ({ name, age, pronouns });
+const buildMainCharacter = (name, age, pronouns) => ({ name, age, pronouns });
 
 // Function to save new reviews in an array, without repeating any review.
 // function saveReview(newReview, reviews) {
@@ -33,7 +33,7 @@ buildMainCharacter = (name, age, pronouns) => ({ name, age, pronouns });
 //     return reviews.push(newReview);
 // };
 
-saveReview = (newReview, reviews) => !reviews.includes(newReview) ? reviews.push(newReview): reviews
+const saveReview = (newReview, reviews) => !reviews.includes(newReview) ? reviews.push(newReview): reviews
 
 
 // Function to add 20 pages per letter in the title.
@@ -42,7 +42,7 @@ saveReview = (newReview, reviews) => !reviews.includes(newReview) ? reviews.push
 //     return pageCount;
 // };
 
-calculatePageCount = title => title.length * 20;
+const calculatePageCount = title => title.length * 20;
 
 // Function that creates an book object.
 // function writeBook(bookTitle, bookCharacter, genre) {
@@ -55,7 +55,7 @@ calculatePageCount = title => title.length * 20;
 //     return newBook;
 // };
 
-writeBook = (bookTitle, bookCharacter, genre) => ({
+const writeBook = (bookTitle, bookCharacter, genre) => ({
   title: bookTitle,
   mainCharacter: bookCharacter,
   genre,
@@ -67,7 +67,7 @@ writeBook = (bookTitle, bookCharacter, genre) => ({
 //     newBook.pageCount = newBook.pageCount * 0.75;
 //   };
 
-editBook = newBook => newBook.pageCount = newBook.pageCount * 0.75;
+const editBook = newBook => newBook.pageCount = newBook.pageCount * 0.75;
 
 
 module.exports = {

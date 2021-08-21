@@ -130,12 +130,12 @@ describe("shelf.js", function() {
       var sciFiShelf = [hyperion, dune, endersGame];
 
       unshelfBook("Dune", sciFiShelf);
-
+      
       assert.equal(sciFiShelf.length, 2);
       assert.deepEqual(sciFiShelf, [hyperion, endersGame]);
 
       unshelfBook("Hyperion", sciFiShelf);
-
+    
       assert.equal(sciFiShelf.length, 1);
       assert.deepEqual(sciFiShelf, [endersGame]);
     });

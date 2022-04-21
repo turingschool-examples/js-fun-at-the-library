@@ -18,8 +18,8 @@
   },
   "homepage": "https://github.com/turingschool-examples/js-fun-at-the-library#readme",
   "dependencies": {
-    "chai": "^4.2.0",
-    "mocha": "^7.1.1"
+    "chai": "^4.3.4",
+    "mocha": "^9.2.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.3"

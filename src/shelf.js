@@ -3,12 +3,27 @@ function shelfBook(bookName, shelfType){
   shelfType.unshift(bookName)
 }
 
+function unshelfBook(bookName, shelfType){
+  for(i = 0; i < shelfType.length; i++){
+    if(bookName === shelfType[i].title){
+      shelfType.splice(i, 1)
+    }
+  }
+}
+
+function listTitles(shelfType){
+  var titles = []
+  for(i = 0; i < shelfType.length; i++){
+    titles.push(shelfType[i].title)
+  }
+  return titles.join(", ")
+}
 
 
 
 module.exports = {
   shelfBook,
-  // unshelfBook,
-  // listTitles,
+  unshelfBook,
+  listTitles,
   // searchShelf
 };

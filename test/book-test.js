@@ -38,7 +38,7 @@ describe("book.js", function () {
       assert.isFunction(buildMainCharacter);
     });
 
-    it.skip("should create a character object", function () {
+    it("should create a character object", function () {
       var ghoulCharacter = buildMainCharacter("Vassya", 16, "she/her");
       var bakerCharacter = buildMainCharacter("Hannah", 30, "she/her");
 
@@ -53,7 +53,7 @@ describe("book.js", function () {
   });
 
   describe("saveReview", function() {
-    it.skip("should be a function (comment the function back into the module.exports object in book.js)", function () {
+    it("should be a function (comment the function back into the module.exports object in book.js)", function () {
       assert.isFunction(saveReview);
     });
 
@@ -89,18 +89,18 @@ describe("book.js", function () {
   });
 
   describe("calculatePageCount", function() {
-    it.skip("should be a function (comment the function back into the module.exports object in book.js)", function () {
+    it("should be a function (comment the function back into the module.exports object in book.js)", function () {
       assert.isFunction(calculatePageCount);
     });
 
-    it.skip("should add 20 pages per letter in the title", function () {
+    it("should add 20 pages per letter in the title", function () {
       var bookTitle = createTitle("Teenage Ghoul");
       var bookPageCount = calculatePageCount(bookTitle);
 
       assert.equal(bookPageCount, 340);
     });
 
-    it.skip("should add 20 pages per letter for a different title", function () {
+    it("should add 20 pages per letter for a different title", function () {
       var bookTitle = createTitle("Dragon in the Summer");
       var bookPageCount = calculatePageCount(bookTitle);
 
@@ -109,7 +109,7 @@ describe("book.js", function () {
   });
 
   describe("writeBook", function() {
-    it.skip("should be a function", function () {
+    it("should be a function", function () {
       assert.isFunction(writeBook);
     });
 

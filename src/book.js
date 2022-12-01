@@ -10,16 +10,24 @@ function buildMainCharacter(name, age, pronouns){
   }
 }
 
-function saveReview(review){
-  var reviews = []
-  return reviews.push(review)
+function saveReview(newReview, array){
+    var reviews = array
+    if(!reviews.includes(newReview)){
+      reviews.push(newReview)
+    }
+  // console.log(reviews)
+  // console.log(reviews.length)
+}
+
+function calculatePageCount(){
+
 }
 
 module.exports = {
   createTitle,
   buildMainCharacter,
   saveReview,
-  // calculatePageCount,
+  calculatePageCount,
   // writeBook,
   // editBook
 }

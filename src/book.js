@@ -10,11 +10,17 @@ function buildMainCharacter(name, age, pronouns){
   }
 }
 
+function saveReview(review, array){
+  if(array.indexOf(review) === -1){
+  array.push(review)
+  }
+}
+
 
 module.exports = {
   createTitle,
   buildMainCharacter,
-  // saveReview,
+  saveReview,
   // calculatePageCount,
   // writeBook,
   // editBook

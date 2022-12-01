@@ -12,17 +12,17 @@ var {
 
 describe("book.js", function () {
   describe("createTitle", function() {
-    it.skip("should be a function", function () {
+    it("should be a function", function () {
       assert.isFunction(createTitle);
     });
 
-    it.skip("should take in a title and return a modified title", function () {
+    it("should take in a title and return a modified title", function () {
       var bookIdea = createTitle("Storm's Awakening");
 
       assert.equal(bookIdea, "The Storm's Awakening");
     });
 
-    it.skip("should be able to create many modified titles", function () {
+    it("should be able to create many modified titles", function () {
       var sushiTitle = createTitle("Dancing Sushi");
       var dragonTitle = createTitle("Dragon in the Summer");
       var ghostTitle = createTitle("Teenage Ghoul");
@@ -34,7 +34,7 @@ describe("book.js", function () {
   });
 
   describe("buildMainCharacter", function() {
-    it.skip("should be a function (comment the function back into the module.exports object in book.js)", function () {
+    it("should be a function (comment the function back into the module.exports object in book.js)", function () {
       assert.isFunction(buildMainCharacter);
     });
 

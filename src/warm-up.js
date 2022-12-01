@@ -12,17 +12,18 @@
 
 // var title = "Harry Potter";
 // var ...
-
+var bookTitle = 'Lard of Teh Reings'
+var pageAmount = 400
 
 
 // Reassign (not initialize) your "pages" variable from above. An editor came around and
 // condensed the book, use a built in math operator to make the page count a quarter
 // of what it currently is 
-
+pageAmount = 400 / 4
 
 
 // Initialize a new variable "movie", but leave it undefined
-
+var movie
 
 
 // Create a variable named "sequel", and assign it to a be a sequel of your
@@ -40,7 +41,15 @@
 // assign a boolean value to this variable. If "pages" is less than 25, the
 // variable should be true, otherwise it should be false. You MUST use a
 // comparison operator.
+var isShortStory = null
 
+function story() {
+    if(pages < 25) {
+        return isShortStory = true
+    } else {
+        return isShortStory = false
+    }
+}
 
 
 //------------------------- Conditionals -------------------------//
@@ -49,7 +58,11 @@
 // Express the following in code: If the variable "pages" is less than 1000 log
 // the statement 'I could read that in a day!', otherwise, log the statement 
 // 'Ok, maybe I could read that in a day and a half'
-
+if(pages < 1000) {
+    return 'I could read that in a day!'
+} else {
+    return 'Ok, maybe I could read that in a day and a half'
+}
 
 
 // Express the following in code: If the variable "isFavorite" is true,
@@ -64,18 +77,18 @@
 
 // Create a new variable "books" and assign it to an Array of 5 different
 // book titles, represented by their names as Strings.
-
+var bookTitles = ['Cats', 'Dogs', 'Pets', 'Birds', 'Games' ]
 
 // Write the code to access the 3rd element of the Array, using bracket
 // notation.
-
+console.log(bookTitles[2])
 
 // Create a new variable "belowTwoHundred" and assign it to an Array of 12
 // different numbers below two hundred.
-
+var belowTwoHundred = [12, 15, 54, 35, 76, 100, 46, 97, 178, 143, 1, 84]
 
 // Write the code to access the 5th element of the array, using bracket notation.
-
+console.log(belowTwoHundred[4])
 
 //------------------------- Objects -------------------------//
 

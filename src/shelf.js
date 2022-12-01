@@ -16,12 +16,18 @@ function listTitles(shelfType){
   for(i = 0; i < shelfType.length; i++){
     titles.push(shelfType[i].title)
   }
-  return titles.join(", ")
+  return (titles.join(", "))
 }
 
-function searchShelf(){
-  
+function searchShelf(shelfType, bookName){
+  for(i = 0; i < shelfType.length; i++){
+  if(shelfType[i].title === bookName){
+    return true
+   } 
+  }
+    return false
 }
+
 
 module.exports = {
   shelfBook,

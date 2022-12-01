@@ -200,7 +200,7 @@ describe("shelf.js", function() {
   });
 
   describe("searchShelf", function() {
-    it.skip("should tell us if a title is on the shelf", function() {
+    it("should tell us if a title is on the shelf", function() {
       var hyperion = {
         title: "Hyperion",
         mainCharacter: { name: "The Shrike", age: null, pronouns: "they" },
@@ -219,7 +219,7 @@ describe("shelf.js", function() {
       assert.equal(searchShelf(sciFiShelf, "The Fifth Season"), false);
     });
 
-    it.skip("should tell us if a title is on a different shelf", function() {
+    it("should tell us if a title is on a different shelf", function() {
       var bossypants = {
         title: "Bossypants",
         mainCharacter: { name: "Tina Fey", age: 50, pronouns: "she/her" },

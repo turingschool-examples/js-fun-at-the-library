@@ -2,11 +2,11 @@ function createTitle(title) {
   return `The ${title}`
 };
 
-function buildMainCharacter(name, age, pronouns){
+function buildMainCharacter(name1, age1, pronouns1){
   return {
-    name: name,
-    age: age,
-    pronouns: pronouns
+    name: name1,
+    age: age1,
+    pronouns: pronouns1
   }
 };
 
@@ -31,9 +31,9 @@ function writeBook(newBook, newChar, newGenre){
 }
 };
 
-function editBook(){
-
-}
+function editBook(bookObject){
+  bookObject.pageCount = bookObject.pageCount *.75
+};
 
 module.exports = {
   createTitle,

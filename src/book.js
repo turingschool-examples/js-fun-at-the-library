@@ -10,8 +10,10 @@ function buildMainCharacter(name, age, pronouns) {
   }
 }
 
-function saveReview() {
-
+function saveReview(addReview, array) {
+  if (array.includes(addReview) === false) {
+    return array.push(addReview)
+  }
 }
 
 function calculatePageCount(bookTitle) {
@@ -20,12 +22,17 @@ function calculatePageCount(bookTitle) {
   
   function writeBook(newBook, newCharacter, newType) {
     return {
-      titles: newBook,
+      title: newBook,
       mainCharacter: newCharacter,
       pageCount: calculatePageCount(newBook),
-      type: newType
+      genre: newType
     }
   }
+
+function editBook(pageCount) {
+  bookPages: pageCount * .75;
+  return pageCount * .75;
+}
 
 module.exports = {
   createTitle,
@@ -33,7 +40,5 @@ module.exports = {
   saveReview,
   calculatePageCount,
   writeBook,
-  // editBook
+  editBook
 }
-
-// npm test test/book-test.js

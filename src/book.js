@@ -11,11 +11,9 @@ function buildMainCharacter(name1, age1, pronouns1){
 };
 
 function saveReview(newReview, array){
-    if(array.includes(newReview) === false){
+    if(!array.includes(newReview)){
       array.push(newReview)
     }
-  // console.log(reviews)
-  // console.log(reviews.length)
 };
 
 function calculatePageCount(bookTitle){

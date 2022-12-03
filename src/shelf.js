@@ -22,12 +22,14 @@ function listTitles(bookList){
   return titles.join(', ')
 }
 
-function searchShelf(){
-  if(){
-
-  }
+function searchShelf(shelf, bookTitle){
+  for(var i =0; i < shelf.length; i++){ 
+  if(shelf[i].title === bookTitle){
+    return true
+  } 
 }
-
+ return false
+}
 
 module.exports = {
   shelfBook,

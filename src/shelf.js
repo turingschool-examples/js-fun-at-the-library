@@ -16,7 +16,7 @@ function listTitles(shelfType){
   for(i = 0; i < shelfType.length; i++){
     titles.push(shelfType[i].title)
   }
-  return (titles.join(", "))
+  return titles.join(", ")
 }
 
 function searchShelf(shelfType, bookName){

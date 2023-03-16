@@ -3,5 +3,6 @@
 module.exports = {
   // createLibrary,
   // addBook,
-  // checkoutBook
+  // checkoutBook,
+  // takeStock
 };

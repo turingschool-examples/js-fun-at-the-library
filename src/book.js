@@ -1,5 +1,5 @@
-function createTitle(bookName) {
-  bookIdea = `The ${bookName}`;
+function createTitle(title) {
+  bookIdea = `The ${title}`;
   return bookIdea;
 }
 
@@ -20,12 +20,27 @@ function saveReview(review, reviews) {
   }
 }
 
+function calculatePageCount(title) {
+  var bookPageCount = title.length * 20;
+  return bookPageCount;
+}
+
+function writeBook(title, mainCharacter, genre) {
+  var bookInfo = {
+    title,
+    mainCharacter,
+    pageCount: calculatePageCount(title),
+    genre
+  }
+  console.log(bookInfo);
+  return bookInfo;
+}
 
 module.exports = {
   createTitle,
   buildMainCharacter,
   saveReview,
-  // calculatePageCount,
-  // writeBook,
+  calculatePageCount,
+  writeBook,
   // editBook
 }

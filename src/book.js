@@ -4,11 +4,14 @@ function createTitle(bookName) {
 }
 
 function buildMainCharacter(name, age, pronouns) {
-  var name = name;
-  var age = age;
-  var pronouns = pronouns;
-  return name, age, pronouns;
+  mainCharacter = {
+    name: name,
+    age: age,
+    pronouns: pronouns
+  }
+  return mainCharacter;
 }
+
 module.exports = {
   createTitle,
   buildMainCharacter,

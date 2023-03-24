@@ -13,10 +13,13 @@ function buildMainCharacter(name, age, pronouns) {
 };
 
 function saveReview(review, reviews) {
-    var reviews = reviews;
+  var reviews = reviews;
+  if(!reviews.includes(review)) {
     reviews.push(review);
     return reviews;
+  }
 }
+
 
 module.exports = {
   createTitle,

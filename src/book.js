@@ -1,7 +1,7 @@
 function createTitle(title) {
   bookIdea = `The ${title}`;
   return bookIdea;
-}
+};
 
 function buildMainCharacter(name, age, pronouns) {
   mainCharacter = {
@@ -18,12 +18,12 @@ function saveReview(review, reviews) {
     reviews.push(review);
     return reviews;
   }
-}
+};
 
 function calculatePageCount(title) {
   var bookPageCount = title.length * 20;
   return bookPageCount;
-}
+};
 
 function writeBook(title, mainCharacter, genre) {
   var bookInfo = {
@@ -32,9 +32,13 @@ function writeBook(title, mainCharacter, genre) {
     pageCount: calculatePageCount(title),
     genre
   }
-  console.log(bookInfo);
   return bookInfo;
-}
+};
+
+function editBook(bookInfo) {
+  console.log(bookInfo)
+  bookInfo.pageCount = bookInfo.pageCount * .75;
+};
 
 module.exports = {
   createTitle,
@@ -42,5 +46,5 @@ module.exports = {
   saveReview,
   calculatePageCount,
   writeBook,
-  // editBook
-}
+  editBook
+};

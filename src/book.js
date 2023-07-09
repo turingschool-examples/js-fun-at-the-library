@@ -49,7 +49,6 @@ function writeBook(bookTitle, bookCharacter, genre) {
 }
 
 function editBook(bookTitle) {
-  console.log('bookTitle:', bookTitle)
   var sum = bookTitle.pageCount *= .75
   return sum
    

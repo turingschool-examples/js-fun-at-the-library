@@ -33,8 +33,8 @@ function writeBook(title,mainCharacter,genre){
 return book
 }
 
-function editBook(){
-
+function editBook(title){
+title.pageCount =  Math.floor(title.pageCount*0.75)
 }
 
 module.exports = {

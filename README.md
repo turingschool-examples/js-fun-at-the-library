@@ -22,9 +22,22 @@ problem.
 
 ## Setup
 
-  - Fork this project to your own Github account
-  - clone the repository to your local machine
+  - Fork this project to your own Github account  
+In your terminal...
+  - clone the repository to your local machine (`git clone...`)
   - `cd` into the project
-  - run `npm install` to install the necessary dependencies
+  - run `npm install` to install the necessary dependencies (it is okay if warnings appear in your terminal)
+To test that it's working...
+  - run `npm test` and you should see something like:
+```bash
+book.js
+    createTitle
+      - should be a function
+      - should take in a title and return a modified title
+      - should be able to create many modified titles
+...
+0 passing (14ms)
+41 pending
+```
   
-  The project spec can be found [here](https://frontend.turing.edu/projects/module-1/library.html).
+The project spec can be found [here](https://frontend.turing.edu/projects/module-1/library.html).

@@ -27,7 +27,7 @@ problem.
 In your terminal...
   - clone the repository to your local machine (`git clone...`)
   - `cd` into the project
-  - run `npm install` to install the necessary dependencies (it is okay if warnings appear in your terminal)
+  - run `npm install` to install the necessary dependencies (ignore any warnings that appear in your terminal)
   
 To test that it's working...
   - run `npm test` and you should see something like:

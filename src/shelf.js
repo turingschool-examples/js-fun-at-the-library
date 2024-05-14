@@ -26,11 +26,21 @@ function listTitles(name) {
   return bookTitles;
 }
 
+// function searchShelf(shelf, title) {
+//   // how can we check the shelf for a title
+//   // and match it with whats in there
+//   for(var titleName of shelf) {
+//     if(titleName.title === title) {
+//       return true
+//     }
+//     // return false
+//   }
+//   return false
+// }
+
 function searchShelf(shelf, title) {
-  // how can we check the shelf for a title
-  // and match it with whats in there
-  for(var titleName of shelf) {
-    if(titleName.title === title) {
+  for(var i = 0; i < shelf.length; i++) {
+    if(shelf[i].title === title) {
       return true
     }
     // return false

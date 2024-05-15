@@ -74,21 +74,74 @@ function checkoutBook(library, bookTitle, genre) {
 }
 
 function takeStock(library, genre) {
-  if(genre) {
-    if(library.shelves.hasOwnProperty(genre)) {
-      // count and tell us how many books are in that shelf
-      var numberBooks = library.shelves[genre].length;
-       return `There are a total of ${numberBooks} ${genre} books at the ${library.name}.`
+    if(library.shelves[genre] ) {
+        var numberOfBooks = library.shelves[genre].length
+        return `There are a total of ${numberOfBooks} ${genre} books at the ${library.name}.`
+      }
+      else {
+        // var genres = Object.keys(library.shelves)
+        // var totalBooks = 0;
+        // for(var i = 0; i < genres.length; i++) {
+        //   totalBooks += library.shelves[genres[i]].length
+        // }
+        var totalBooks = library.shelves.fantasy.length + library.shelves.nonFiction.length + library.shelves.fiction.length
+        return `There are a total of ${totalBooks} books at the ${library.name}.`
+      }
     }
-  }
-  else {
-    var totalBooks = 0;
-    for(var shelf in library.shelves) {
-      totalBooks += library.shelves[shelf].length;
-    }
-    return `There are a total of ${totalBooks} books at the ${library.name}.`
-  }
-}
+
+
+  // if(library.shelves[genre] ) {
+  //   var numberOfBooks = library.shelves[genre].length
+  //   return `There are a total of ${numberOfBooks} ${genre} books at the ${library.name}.`
+  // }
+  // else {
+  //   var totalBooks = 0;
+  //   for(var i = 0; i < library.shelves[genre].length; i++) {
+  //     totalBooks += library.shelves[genre].length;
+  //     //
+  //     if(!genre.includes('fantasy' && 'nonFiction' && 'fiction')) {
+  //       return `There are a total of ${totalBooks} books at the ${library.name}.`
+  //     }
+  //   //   return `There are a total of ${totalBooks} books at the ${library.name}.`
+  //   // }
+  //   // for(var i = 0; i < library.shelves.length; i++) {
+  //   //   notSpecifiedShelf += library.shelves.length
+  //   //   return `There are a total of ${totalBooks} books at the ${library.name}.`
+  //   // }
+      
+  //     //
+  //     // return `There are a total of ${totalBooks} books at the ${library.name}.`
+  //   }
+  //   return `There are a total of ${totalBooks} books at the ${library.name}.`
+  // }
+
+// collecting a genre from shelf from a library
+// returning the sum of the said genre
+// wants the number of books on different shelves
+// returning the sum of all books on shelf
+
+
+
+
+// function takeStock(library, genre) {
+//   if(genre) {
+//     if(library.shelves.hasOwnProperty(genre)) {
+//       // count and tell us how many books are in that shelf
+//       var numberBooks = library.shelves[genre].length;
+//        return `There are a total of ${numberBooks} ${genre} books at the ${library.name}.`
+//     }
+//   }
+//   else {
+//     var totalBooks = 0;
+//     for(var shelf in library.shelves) {
+//       totalBooks += library.shelves[shelf].length;
+//     }
+//     return `There are a total of ${totalBooks} books at the ${library.name}.`
+//   }
+// }
+
+
+
 
 
 
